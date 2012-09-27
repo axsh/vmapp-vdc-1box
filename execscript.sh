@@ -11,12 +11,12 @@ set -e
 
 ### read-only variables
 
-readonly abs_path=$(cd $(dirname $0) && pwd)
+readonly abs_dirname=$(cd $(dirname $0) && pwd)
 
 ### variables for vmbuilder
 
 declare chroot_dir=${1}
-declare execscript_part_dir="${abs_path}/execscript-part.d"
+declare execscript_part_dir="${abs_dirname}/execscript-part.d"
 declare tmpdir=/tmp/$(date +%s)
 
 ## main
