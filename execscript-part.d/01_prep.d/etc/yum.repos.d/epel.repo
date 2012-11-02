@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# requires:
+#  bash
+#
+set -e
+
+## main
+
+yum install -y http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-7.noarch.rpm

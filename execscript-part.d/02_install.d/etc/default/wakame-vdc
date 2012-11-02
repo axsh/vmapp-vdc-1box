@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# requires:
+#  bash
+#  yum
+#
+set -e
+
+yum install -y wakame-vdc-example-1box-experiment-vmapp-config

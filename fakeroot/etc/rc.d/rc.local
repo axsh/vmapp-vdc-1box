@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here if you don't
+# want to do the full Sys V style init stuff.
+
+touch /var/lock/subsys/local
+
+## Wakame-VDC
+
+### stop services
+
+/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh stop
+
+### initialize database
+
+for dbname in wakame_dcmgr wakame_dcmgr_gui; do
+  yes | mysqladmin -uroot drop ${dbname} || :
+  mysqladmin -uroot create ${dbname}
+  mysql      -uroot        ${dbname} < /var/lib/wakame-vdc/demo/${dbname}.sql
+done
+
+### add core data
+
+export HOME=/root
+
+/opt/axsh/wakame-vdc/dcmgr/bin/vdc-manage              < /var/lib/wakame-vdc/demo/vdc-manage.txt
+/opt/axsh/wakame-vdc/frontend/dcmgr_gui/bin/gui-manage < /var/lib/wakame-vdc/demo/gui-manage.txt
+
+### copy hva.conf
+
+/bin/cp -f /etc/wakame-vdc/hva.conf.openflow /etc/wakame-vdc/hva.conf
+
+### start services
+
+/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
