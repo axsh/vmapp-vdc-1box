@@ -33,7 +33,8 @@ export HOME=/root
 
 ### copy hva.conf
 
-/bin/cp -f /etc/wakame-vdc/hva.conf.openflow /etc/wakame-vdc/hva.conf
+#/bin/cp -f /etc/wakame-vdc/hva.conf.openflow /etc/wakame-vdc/hva.conf
+/bin/cp -f /etc/wakame-vdc/hva.conf.netfilter /etc/wakame-vdc/hva.conf
 
 ### start services
 
