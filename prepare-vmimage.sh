@@ -15,7 +15,7 @@ readonly vmimage_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/vmimage/ubu
 
 function deploy_vmimage() {
   [[ -f "${vmimage_path}" ]] || {
-    curl -o ${vmimage_path}.gz -R ${vmimage_uri}
+    curl -L -o ${vmimage_path}.gz -R ${vmimage_uri}
     zcat ${vmimage_path}.gz | cp --sparse=always /dev/stdin ${vmimage_path}
   }
 }
