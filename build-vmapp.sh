@@ -56,10 +56,14 @@ readonly abs_dirname=$(cd $(dirname $0) && pwd)
 readonly manifest_dir=${abs_dirname}
 readonly fakeroot_dir=${manifest_dir}/fakeroot
 
+###
+
+declare vmapp_name=${1:-vmapp-ashiba}
+
 ## main
 
 # enable to set PATH at config.env
 [[ -f ${abs_dirname}/config.env ]] && . ${abs_dirname}/config.env || :
 
 generate_copyfile
-build_vm vmapp-ashiba
+build_vm ${vmapp_name}
