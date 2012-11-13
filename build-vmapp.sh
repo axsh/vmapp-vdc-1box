@@ -10,7 +10,7 @@ set -e
 
 function list_fakeroot_tree() {
   cd ${fakeroot_dir}
-  find . -type f | sed s,^\.,,
+  find . -type f | sed s,^\.,, | egrep -v ^/.gitkeep
 }
 
 function generate_copyfile() {
