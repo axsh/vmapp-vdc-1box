@@ -37,7 +37,7 @@ function build_vm() {
 
   $(vmbuilder_path) \
    --distro-arch=${arch} \
-           --raw=${target}.$(date +%Y%m%d).01.${arch}.raw \
+           --raw=${raw:-${target}.$(date +%Y%m%d).01.${arch}.raw} \
           --copy=${manifest_dir}/copy.txt \
     --execscript=${manifest_dir}/execscript.sh
 }
