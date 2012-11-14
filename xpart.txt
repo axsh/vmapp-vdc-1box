@@ -1,0 +1,21 @@
+# -*-Text-file-*-
+#
+# requires:
+#  vmbuilder.sh
+#
+# description:
+#  making partition table using 'parted' command
+#
+# usage:
+#  $ vmbuilder.sh --xpart=[FILE]
+#
+# format:
+#  + [mount-point] [size(MB)]
+#  + vmbuilder.sh ignores '^#|^$' and more than 3 column(s).
+#
+# memo:
+#  /tmp should be more than 46.
+#  if not enoguth size is allocated, installing kernel will be failed.
+#  > Non-fatal POSTTRANS scriptlet failure in rpm package kernel-2.6.32-279.el6.x86_64
+#
+root -1 # p1 | primary 1 |
