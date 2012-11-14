@@ -8,18 +8,18 @@
 #
 set -e
 
-function list_fakeroot_tree() {
-  cd ${fakeroot_dir}
+function list_guestroot_tree() {
+  cd ${guestroot_dir}
   find . -type f | sed s,^\.,, | egrep -v ^/.gitkeep
 }
 
 function generate_copyfile() {
   echo "[INFO] Generating copy.txt"
 
-  [[ -d "${fakeroot_dir}" ]] && {
+  [[ -d "${guestroot_dir}" ]] && {
     while read line; do
-      echo ${fakeroot_dir}${line} ${line}
-    done < <(list_fakeroot_tree) > ${manifest_dir}/copy.txt
+      echo ${guestroot_dir}${line} ${line}
+    done < <(list_guestroot_tree) > ${manifest_dir}/copy.txt
   }
 
   cat ${manifest_dir}/copy.txt
@@ -54,7 +54,7 @@ export LANG=C
 readonly abs_dirname=$(cd $(dirname $0) && pwd)
 
 readonly manifest_dir=${abs_dirname}
-readonly fakeroot_dir=${manifest_dir}/fakeroot
+readonly guestroot_dir=${manifest_dir}/guestroot
 
 ###
 
