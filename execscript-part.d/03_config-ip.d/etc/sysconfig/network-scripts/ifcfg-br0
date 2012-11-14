@@ -11,7 +11,3 @@ set -e
 /opt/axsh/wakame-vdc/rpmbuild/helpers/setup-bridge-if.sh \
  --brname=br0  \
  --ifname=eth0
-
-# --ip=192.168.2.19 \
-# --mask=255.255.255.0 \
-# --gw=192.168.2.1
