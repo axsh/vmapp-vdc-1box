@@ -6,4 +6,6 @@
 #
 set -e
 
+yum clean metadata --disablerepo=* --enablerepo=wakame-vdc-rhel6
+yum update  -y     --disablerepo=* --enablerepo=wakame-vdc-rhel6
 yum install -y wakame-vdc-example-1box-experiment-vmapp-config
