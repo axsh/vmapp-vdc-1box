@@ -1,0 +1,36 @@
+account add --name="opetest0" --uuid=a-opetest0
+account add --name="opetest1" --uuid=a-opetest1
+account add --name="opetest2" --uuid=a-opetest2
+account add --name="opetest3" --uuid=a-opetest3
+account add --name="opetest4" --uuid=a-opetest4
+account add --name="opetest5" --uuid=a-opetest5
+account add --name="opetest6" --uuid=a-opetest6
+account add --name="opetest7" --uuid=a-opetest7
+account add --name="opetest8" --uuid=a-opetest8
+account add --name="opetest9" --uuid=a-opetest9
+account add --name="opetesta" --uuid=a-opetesta
+account add --name="opetestb" --uuid=a-opetestb
+user add --name="opetest0" --uuid=u-opetest0 --login-id=opetest0 --password=opetest0 --primary-account-id=a-opetest0 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest0 --account-ids "a-opetest0"
+user add --name="opetest1" --uuid=u-opetest1 --login-id=opetest1 --password=opetest1 --primary-account-id=a-opetest1 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest1 --account-ids "a-opetest1"
+user add --name="opetest2" --uuid=u-opetest2 --login-id=opetest2 --password=opetest2 --primary-account-id=a-opetest2 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest2 --account-ids "a-opetest2"
+user add --name="opetest3" --uuid=u-opetest3 --login-id=opetest3 --password=opetest3 --primary-account-id=a-opetest3 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest3 --account-ids "a-opetest3"
+user add --name="opetest4" --uuid=u-opetest4 --login-id=opetest4 --password=opetest4 --primary-account-id=a-opetest4 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest4 --account-ids "a-opetest4"
+user add --name="opetest5" --uuid=u-opetest5 --login-id=opetest5 --password=opetest5 --primary-account-id=a-opetest5 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest5 --account-ids "a-opetest5"
+user add --name="opetest6" --uuid=u-opetest6 --login-id=opetest6 --password=opetest6 --primary-account-id=a-opetest6 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest6 --account-ids "a-opetest6"
+user add --name="opetest7" --uuid=u-opetest7 --login-id=opetest7 --password=opetest7 --primary-account-id=a-opetest7 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest7 --account-ids "a-opetest7"
+user add --name="opetest8" --uuid=u-opetest8 --login-id=opetest8 --password=opetest8 --primary-account-id=a-opetest8 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest8 --account-ids "a-opetest8"
+user add --name="opetest9" --uuid=u-opetest9 --login-id=opetest9 --password=opetest9 --primary-account-id=a-opetest9 --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetest9 --account-ids "a-opetest9"
+user add --name="opetesta" --uuid=u-opetesta --login-id=opetesta --password=opetesta --primary-account-id=a-opetesta --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetesta --account-ids "a-opetesta"
+user add --name="opetestb" --uuid=u-opetestb --login-id=opetestb --password=opetestb --primary-account-id=a-opetestb --locale="ja" --time-zone="Asia/Tokyo"
+user associate u-opetestb --account-ids "a-opetestb"
