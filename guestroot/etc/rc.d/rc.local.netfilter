@@ -28,8 +28,8 @@ done
 
 export HOME=/root
 
-/opt/axsh/wakame-vdc/dcmgr/bin/vdc-manage              < /var/lib/wakame-vdc/demo/vdc-manage.txt
-/opt/axsh/wakame-vdc/frontend/dcmgr_gui/bin/gui-manage < /var/lib/wakame-vdc/demo/gui-manage.txt
+find /var/lib/wakame-vdc/demo/vdc-manage.d/ -type f | sort | xargs cat | /opt/axsh/wakame-vdc/dcmgr/bin/vdc-manage
+find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | /opt/axsh/wakame-vdc/frontend/dcmgr_gui/bin/gui-manage
 
 ### copy hva.conf
 
