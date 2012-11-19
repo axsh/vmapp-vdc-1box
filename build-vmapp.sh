@@ -10,7 +10,7 @@ set -e
 
 function list_guestroot_tree() {
   cd ${guestroot_dir}
-  find . -type f | sed s,^\.,, | egrep -v ^/.gitkeep
+  find . ! -type d | sed s,^\.,, | egrep -v ^/.gitkeep
 }
 
 function generate_copyfile() {
