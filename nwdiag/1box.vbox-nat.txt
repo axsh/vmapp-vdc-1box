@@ -1,0 +1,24 @@
+"1box.vbox-nat" {
+  inet [shape = cloud];
+  inet -- router;
+
+  network hypervisors {
+    address = "192.168.2.0/24"
+
+    router [address = "192.168.2.1"];
+    kvmbox [address = "192.168.2.XX"];
+  }
+
+  network vboxnet {
+    address = "10.0.2.2/24";
+
+    kvmbox [address = "10.0.2.2"];
+    vdcbox [address = "10.0.2.15"];
+
+    group insts {
+      color = "#ffffff";
+      "i-100"[address = "10.0.2.100"];
+      "i-101"[address = "10.0.2.101"];
+    }
+  }
+}

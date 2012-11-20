@@ -1,0 +1,31 @@
+"1box.vnet" {
+  network vboxnet {
+    address = "10.0.2.2/24";
+
+    group vnet1 {
+      color = "#ffffff";
+      "i-100"[address = "10.0.2.100"];
+      "i-101"[address = "10.0.2.101"];
+    };
+
+    group vnet2 {
+      color = "#ffffff";
+      "i-102"[address = "10.0.2.100"];
+      "i-103"[address = "10.0.2.101"];
+    };
+  }
+
+  network vnet1 {
+    address = "10.1.1.0/24";
+
+    "i-100"[address = "10.1.1.10"];
+    "i-101"[address = "10.1.1.11"];
+  }
+
+  network vnet2 {
+    address = "10.1.1.0/24";
+
+    "i-102"[address = "10.1.1.10"];
+    "i-103"[address = "10.1.1.11"];
+  }
+}

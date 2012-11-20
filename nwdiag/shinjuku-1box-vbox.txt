@@ -1,0 +1,37 @@
+"shinjuku-1box-vbox" {
+  inet [shape = cloud];
+  inet -- router [address = "211.19.101.215"];
+
+  network office {
+    address = "192.168.1.0/24"
+
+    router [address = "192.168.1.1"];
+    opty   [address = "192.168.1.100"];
+  }
+
+  network hypervisors {
+    address = "192.168.2.0/24"
+
+    router [address = "192.168.2.1"];
+    kvmbox [address = "192.168.2.XX"];
+
+    group kvmhosts {
+      color = "#ffffff";
+      sl6    [address = "192.168.2.21"];
+      hadaka [address = "192.168.2.22"];
+    };
+  }
+
+  network vboxnet {
+    address = "10.0.2.2/24";
+
+    kvmbox [address = "10.0.2.2"];
+    vdcbox [address = "10.0.2.15"];
+
+    group insts {
+      color = "#eeffff";
+      "i-100"[address = "10.0.2.100"];
+      "i-101"[address = "10.0.2.101"];
+    }
+  }
+}
