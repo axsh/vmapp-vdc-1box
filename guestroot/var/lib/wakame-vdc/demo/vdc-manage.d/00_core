@@ -67,8 +67,6 @@ resourcegroup map hng-shhost hn-demo1
 resourcegroup map sng-shstor sn-demo1
 resourcegroup map nwg-shnet  nw-demo1
 
-network reserve nw-demo1 --ipv4=10.99.2.0/24
-
 spec  add --uuid is-demospec --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 1 --memory-size 256 --quota-weight 1
 spec  add --uuid is-demo2    --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 2 --memory-size 256 --quota-weight 1
 spec  add --uuid is-small    --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 1 --memory-size 256 --quota-weight 1
