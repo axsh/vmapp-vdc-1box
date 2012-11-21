@@ -1,0 +1,8 @@
+{
+   "env" -> 1box;
+   "env" -> multibox -> Ume, Take, Matsu;
+
+   Matsu -> dcmgrM, nsaM, metadataM, collectorM, webapiM, proxyM, hvaM, staM;
+   Take  -> dcmgrT, hvaT, staT;
+   Ume   -> dcmgrU, hvaU;
+}
