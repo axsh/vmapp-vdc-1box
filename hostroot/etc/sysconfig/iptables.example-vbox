@@ -1,0 +1,15 @@
+*nat
+:PREROUTING ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A PREROUTING  -i br0 -p tcp -m tcp --dport 2022 -j DNAT --to-destination 10.0.2.15:22
+-A PREROUTING  -i br0 -p tcp -m tcp --dport 9000 -j DNAT --to-destination 10.0.2.15:9000
+-A PREROUTING  -i br0 -p tcp -m tcp --dport 9003 -j DNAT --to-destination 10.0.2.15:9003
+-A POSTROUTING -o br0 -s 10.0.2.0/24 -j MASQUERADE
+COMMIT
+
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+COMMIT
