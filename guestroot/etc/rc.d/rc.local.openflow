@@ -35,6 +35,10 @@ cat /var/lib/wakame-vdc/demo/gui-manage.d/* | /opt/axsh/wakame-vdc/frontend/dcmg
 
 /bin/cp -f /etc/wakame-vdc/hva.conf.openflow /etc/wakame-vdc/hva.conf
 
+### prepare to start vdc-*
+
+sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
+
 ### start services
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start

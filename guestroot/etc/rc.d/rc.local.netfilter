@@ -35,6 +35,10 @@ find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | /opt/ax
 
 /bin/cp -f /etc/wakame-vdc/hva.conf.netfilter /etc/wakame-vdc/hva.conf
 
+### prepare to start vdc-*
+
+sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
+
 ### start services
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
