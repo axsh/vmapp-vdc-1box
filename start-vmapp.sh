@@ -37,6 +37,9 @@ declare vmapp_name=${1:-vmapp-ashiba}
 [[ -f ${abs_dirname}/config.env ]] && . ${abs_dirname}/config.env || :
 
 $(dirname $(vmbuilder_path))/misc/kvm-ctl.sh start --image-path=${raw} \
- --brname=${brname} \
- --mem-size=${mem_size} \
- --cpu-num=${cpu_num}
+       --brname=${brname} \
+     --mem-size=${mem_size} \
+      --cpu-num=${cpu_num} \
+     --vnc-port=${vnc_port:-1001} \
+ --monitor-port=${monitor_port:-4444} \
+  --serial-port=${serial_port:-5555}
