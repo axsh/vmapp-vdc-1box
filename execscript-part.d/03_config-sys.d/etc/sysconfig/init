@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# requires:
+#  bash
+#  pwd
+#
+set -e
+
+##
+
+readonly abs_dirname=$(cd $(dirname $0) && pwd)
+. ${abs_dirname}/../../../functions.sh
+
+## main
+
+configure_keyval /etc/sysconfig/init ACTIVE_CONSOLES "/dev/tty[1-6] /dev/ttyS0"
