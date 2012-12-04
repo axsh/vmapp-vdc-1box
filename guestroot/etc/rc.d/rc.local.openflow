@@ -34,6 +34,7 @@ cat /var/lib/wakame-vdc/demo/gui-manage.d/* | /opt/axsh/wakame-vdc/frontend/dcmg
 ### copy hva.conf
 
 /bin/cp -f /etc/wakame-vdc/hva.conf.openflow /etc/wakame-vdc/hva.conf
+[[ -f /etc/wakame-vdc/admin/admin.yml.demo ]] && /bin/cp -f /etc/wakame-vdc/admin/admin.yml.demo /etc/wakame-vdc/admin/admin.yml
 
 ### prepare to start vdc-*
 
