@@ -67,13 +67,6 @@ resourcegroup map hng-shhost hn-demo1
 resourcegroup map sng-shstor sn-demo1
 resourcegroup map nwg-shnet  nw-demo1
 
-spec  add --uuid is-demospec --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 1 --memory-size 256 --quota-weight 1
-spec  add --uuid is-demo2    --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 2 --memory-size 256 --quota-weight 1
-spec  add --uuid is-small    --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 1 --memory-size 256 --quota-weight 1
-spec  add --uuid is-large    --account-id a-shpoolxx --arch x86 --hypervisor openvz --cpu-cores 1 --memory-size 256 --quota-weight 2
-spec  addvif is-demo2 eth1
-spec  addvif is-demo2 eth2
-
 keypair add --account-id a-shpoolxx --uuid ssh-demo --private-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pri.pem --public-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pub.pem --description "demo key1" --service-type std --display-name "demo"
 
 macrange add 525400 1 ffffff --uuid mr-demomacs
