@@ -40,6 +40,13 @@ find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | /opt/ax
 
 sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
 
+### change parameter to run lb instance
+
+sed -i -e "s,management_network.*,management_network 'nw-demo1'," /etc/wakame-vdc/dcmgr.conf
+
 ### start services
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
+
+initctl start vdc-hva-worker ID=openvz32
+initctl start vdc-hva-worker ID=openvz64

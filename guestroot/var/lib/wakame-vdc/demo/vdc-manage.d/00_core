@@ -1,14 +1,39 @@
-host    add hva.demo1 --force --uuid hn-demo1 --cpu-cores 100 --memory-size 400000 --hypervisor openvz --arch x86
+# host node (hn-*)
+
+host add hva.openvz32 --force --uuid hn-openvz32 --cpu-cores 100 --memory-size 400000 --hypervisor openvz --arch x86
+host add hva.openvz64 --force --uuid hn-openvz64 --cpu-cores 100 --memory-size 400000 --hypervisor openvz --arch x86_64
+
+# storage node (sta)
+
 storage add sta.demo1 --force --uuid sn-demo1 --base-path /opt/axsh/wakame-vdc/volumes --disk-space 1048576 --ipaddr 127.0.0.1 --storage-type raw --snapshot-base-path /opt/axsh/wakame-vdc/snap
 
+# backupstorage
+
 backupstorage add --uuid bkst-demo2 --display-name='local storage' --base-uri='file:///opt/axsh/wakame-vdc/images/' --storage-type=local --description='local backup storage under /opt/axsh/wakame-vdc/images/'
+
+# vm image (wmi-*)
+# hierarchy: bkst-XXX / bo-XXX / wmi-XXX
+
+## lucid5d
+
 backupobject add --storage-id=bkst-demo2 --uuid bo-lucid5d --display-name='ubuntu-lucid-kvm-md-32.raw' --object-key=ubuntu-lucid-kvm-md-32.raw --size=657457152 --allocation-size=657457152 --checksum=22cf1844b64c391bb382764c24c8f5e2 --container-format=none --description='kvm 32bit'
+
 image add local bo-lucid5d --account-id a-shpoolxx --uuid wmi-lucid5d --arch x86 --description 'ubuntu-lucid-kvm-md-32.raw local' --file-format raw --root-device uuid:148bc5df-3fc5-4e93-8a16-7328907cb1c0 --service-type std --is-public --display-name 'lucid5d' --is-cacheable
 image features wmi-lucid5d --virtio
 
+## lucid6
+
 backupobject add --storage-id=bkst-demo2 --uuid bo-lucid6d --display-name='ubuntu-lucid-kvm-md-32.raw' --object-key=ubuntu-lucid-kvm-md-32.raw --size=657457152 --allocation-size=657457152 --checksum=22cf1844b64c391bb382764c24c8f5e2 --container-format=none --description='kvm 32bit'
-image add volume bo-lucid6d --account-id a-shpoolxx --uuid wmi-lucid6d --arch x86 --description 'ubuntu-lucid-kvm-md-32.raw volume' --file-format raw --root-device uuid:148bc5df-3fc5-4e93-8a16-7328907cb1c0 --service-type std --is_public --display-name 'lucid6d'
+image add volume bo-lucid6d --account-id a-shpoolxx --uuid wmi-lucid6d --arch x86 --description 'ubuntu-lucid-kvm-md-32.raw volume' --file-format raw --root-device uuid:148bc5df-3fc5-4e93-8a16-7328907cb1c0 --service-type std --is-public --display-name 'lucid6d'
 image features wmi-lucid6d --virtio
+
+## demolb
+
+backupobject add --storage-id=bkst-demo2 --uuid bo-demolb --display-name='lb-centos-openvz-md-64-stud.raw.gz' --object-key=lb-centos-openvz-md-64-stud.raw.gz --size=657457152 --allocation-size=939524096 --checksum=656902fc4c190418192ec411f0bba4fc --container-format=gz --description='openvz 64bit'
+image add local bo-demolb --account-id a-shpoolxx --uuid wmi-demolb --arch x86_64 --description 'lb-centos-openvz-md-64-stud.raw.gz local' --file-format raw --root-device uuid:f048b800-abcb-416d-81f2-521d5080af4d --service-type lb --is-public --display-name 'demolb' --is-cacheable
+image features wmi-demolb --virtio
+
+# network dc
 
 network dc add public
 network dc add-network-mode public securitygroup
@@ -28,6 +53,8 @@ network dc add vnet --allow-new-networks true
 network dc add-network-mode vnet l2overlay
 network dc del-network-mode vnet passthrough
 
+# network (nw-*)
+
 network add  --uuid nw-demo1 --ipv4-network 10.0.2.0   --ipv4-gw 10.0.2.2 --prefix 24 --domain vdc.local --metric 10 --service-type std --display-name "demo1" --ip-assignment "asc"
 network add  --uuid nw-demo2 --ipv4-network 10.100.0.0 --prefix 24 --domain vdc.local --metric 10 --service-type std --display-name "demo2" --ip-assignment "asc"
 network add  --uuid nw-demo3 --ipv4-network 10.101.0.0 --prefix 24 --domain vdc.local --metric 10 --service-type std --display-name "demo3" --ip-assignment "asc"
@@ -36,6 +63,8 @@ network add  --uuid nw-demo5 --ipv4-network 10.101.0.0 --prefix 24 --domain vdc.
 network add  --uuid nw-demo6  --network-mode l2overlay  --ipv4-network 10.102.0.0  --ipv4-gw 10.102.0.1  --prefix 24  --domain vnet6.local  --metric 10  --service-type std  --display-name "demo6"  --ip-assignment "asc"
 network add  --uuid nw-demo7  --network-mode l2overlay  --ipv4-network 10.103.0.0  --ipv4-gw 10.103.0.1  --prefix 24  --domain vnet7.local  --metric 10  --service-type std  --display-name "demo7"  --ip-assignment "asc"
 network add  --uuid nw-demo8  --ipv4-network 10.1.0.0  --ipv4-gw 10.1.0.1  --prefix 24  --domain vnet8.local  --metric 10  --service-type lb  --display-name "demo8"  --ip-assignment "asc"
+
+# network forwarding
 
 network forward nw-demo1 public
 network forward nw-demo2 public
@@ -46,9 +75,13 @@ network forward nw-demo6 null1
 network forward nw-demo7 null1
 network forward nw-demo8 management
 
+# network service
+
 network service dhcp nw-demo6 --ipv4=10.102.0.2
 network service dhcp nw-demo7 --ipv4=10.103.0.2
 network service dns  nw-demo7 --ipv4=10.103.0.2
+
+# network dhcp ip address range
 
 network dhcp addrange nw-demo1 10.0.2.100   10.0.2.255
 network dhcp addrange nw-demo2 10.100.0.61  10.100.0.65
@@ -63,10 +96,17 @@ network dhcp addrange nw-demo6 10.102.0.10  10.102.0.240
 network dhcp addrange nw-demo7 10.103.0.10  10.103.0.240
 network dhcp addrange nw-demo8 10.1.0.10    10.1.0.240
 
-resourcegroup map hng-shhost hn-demo1
+# resource mapping
+
+resourcegroup map hng-shhost hn-openvz32
+resourcegroup map hng-shhost hn-openvz64
 resourcegroup map sng-shstor sn-demo1
 resourcegroup map nwg-shnet  nw-demo1
 
+# ssh keypair
+
 keypair add --account-id a-shpoolxx --uuid ssh-demo --private-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pri.pem --public-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pub.pem --description "demo key1" --service-type std --display-name "demo"
+
+# mac address range
 
 macrange add 525400 1 ffffff --uuid mr-demomacs
