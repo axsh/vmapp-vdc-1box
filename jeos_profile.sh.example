@@ -1,0 +1,53 @@
+# -*-Shell-script-*-
+#
+# requires:
+#  bash
+#
+
+# vmbuilder
+
+## prepare
+
+name=node$(printf "%03d" ${node_id:-1})
+export ASHIBA_ENV=
+
+## disk layout
+
+raw=$(pwd)/${name}.raw
+#rootsize=$((1024 * 8))
+#bootsize=0
+#swapsize=0
+
+## network configuration
+
+#hostname=${name}
+#gw=192.0.2.1
+#ip=192.0.2.$(printf %d ${node_id:-1})
+#net=
+#mask=
+#bcast=
+
+nictab=$(pwd)/${name}.nictab # nic layout
+
+## account
+
+#rootpass=root
+
+## post install
+
+execscript=$(pwd)/execscript.sh
+copy=$(pwd)/${name}.copy
+
+# kvm-ctl
+
+image_path=${raw}
+#cpu_num=1
+
+viftab=$(pwd)/${name}.viftab # vif layout
+
+    vnc_port=$((1001 + ${node_id:-1}))
+monitor_port=$((4444 + ${node_id:-1}))
+ serial_port=$((5555 + ${node_id:-1}))
+
+# mix jeos
+[[ -f $(pwd)/jeosrc.sh ]] && . $(pwd)/jeosrc.sh || :
