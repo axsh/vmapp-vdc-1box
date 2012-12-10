@@ -17,8 +17,8 @@ vmbuilder.sh pre-setup
 ----------------------
 
     $ cd ashiba-skel
-    $ git submodule update
     $ git submodule init
+    $ git submodule update
 
 Configuring jeos params
 -----------------------
