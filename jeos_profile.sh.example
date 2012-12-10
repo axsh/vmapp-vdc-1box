@@ -36,7 +36,7 @@ nictab=$(pwd)/${name}.nictab # nic layout
 ## post install
 
 execscript=$(pwd)/execscript.sh
-copy=$(pwd)/${name}.copy
+copy=$(pwd)/copy.txt
 
 # kvm-ctl
 
