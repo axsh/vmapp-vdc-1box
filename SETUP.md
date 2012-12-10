@@ -1,16 +1,14 @@
 ### pre-setup
 
     $ ./prepare-vmimage.sh
-
-    $ ln -s config.env.local.example config.env.local
-    $ ln -s config.env.vmapp.example config.env.vmapp
+    $ ln -s jeos_profile.sh config.env.vmapp
 
 ### build vm
 
-    $ time sudo ASHIBA_ENV=openflow  ./build-vmapp.sh
-    $ time sudo ASHIBA_ENV=netfilter ./build-vmapp.sh
+    $ sudo ASHIBA_ENV=openflow  ./jeos-ctl.sh build --config-path=./config.env.vmapp
+    $ sudo ASHIBA_ENV=netfilter ./jeos-ctl.sh build --config-path=./config.env.vmapp
 
 ### start vm
 
-    $ time sudo ASHIBA_ENV=openflow  ./start-vmapp.sh
-    $ time sudo ASHIBA_ENV=netfilter ./start-vmapp.sh
+    $ sudo ASHIBA_ENV=openflow  ./jeos-ctl.sh start --config-path=./config.env.vmapp
+    $ sudo ASHIBA_ENV=netfilter ./jeos-ctl.sh start --config-path=./config.env.vmapp

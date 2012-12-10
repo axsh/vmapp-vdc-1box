@@ -8,26 +8,23 @@
 
 ## prepare
 
-name=node$(printf "%03d" ${node_id:-1})
-#export ASHIBA_ENV=
+name=vdcbox
 
 ## disk layout
 
-raw=$(pwd)/${name}.raw
+#raw=$(pwd)/${name}.raw
 #rootsize=$((1024 * 8))
 #bootsize=0
 #swapsize=0
 
 ## network configuration
 
-#hostname=${name}
-#gw=192.0.2.1
-#ip=192.0.2.$(printf %d ${node_id:-1})
-#net=
-#mask=
-#bcast=
+hostname=wakame-vdc
+gw=10.0.2.2
+ip=10.0.2.15
+mask=255.255.255.0
 
-nictab=$(pwd)/${name}.nictab # nic layout
+#nictab=$(pwd)/${name}.nictab # nic layout
 
 ## account
 
@@ -40,10 +37,11 @@ copy=$(pwd)/copy.txt
 
 # kvm-ctl
 
+brname=vboxbr0
 image_path=${raw}
 #cpu_num=1
 
-viftab=$(pwd)/${name}.viftab # vif layout
+#viftab=$(pwd)/${name}.viftab # vif layout
 
     vnc_port=$((1001 + ${node_id:-1}))
 monitor_port=$((4444 + ${node_id:-1}))
