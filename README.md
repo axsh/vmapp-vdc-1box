@@ -16,10 +16,17 @@ Installing ashiba-skel
 vmbuilder.sh pre-setup
 ----------------------
 
-    $ cd /opt/hansode
-    $ git clone git://github.com/hansode/vmbuilder.git
+    $ cd ashiba-skel
+    $ git submodule update
+    $ git submodule init
+
+Configuring jeos params
+-----------------------
+
+    $ cp -i jeos_profile.sh.example jeos_profile.sh
+    $ vi jeos_profile.sh
 
 Building virtual machine image with ashiba
 ------------------------------------------
 
-    $ sudo ./build-vmapp.sh
+    $ sudo ./jeos-ctl.sh build --config-path=./jeos_profile.sh
