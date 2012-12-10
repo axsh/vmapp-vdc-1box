@@ -20,9 +20,11 @@ name=vdcbox
 ## network configuration
 
 hostname=wakame-vdc
-gw=10.0.2.2
-ip=10.0.2.15
-mask=255.255.255.0
+
+### /opt/axsh/wakame-vdc/rpmbuild/helpers/setup-bridge-if.sh (nic configuration script) requires shell variable or environment variable.
+export gw=10.0.2.2
+export ip=10.0.2.15
+export mask=255.255.255.0
 
 #nictab=$(pwd)/${name}.nictab # nic layout
 
