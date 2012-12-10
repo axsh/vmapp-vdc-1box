@@ -9,7 +9,7 @@
 ## prepare
 
 name=node$(printf "%03d" ${node_id:-1})
-export ASHIBA_ENV=
+#export ASHIBA_ENV=
 
 ## disk layout
 
