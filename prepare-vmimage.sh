@@ -27,3 +27,4 @@ function deploy_vmimage() {
 
 deploy_vmimage ubuntu-lucid-kvm-md-32.raw
 deploy_vmimage lb-centos-openvz-md-64-stud.raw
+deploy_vmimage centos-6.3-openvz-md-x86_64-40G.raw.tar

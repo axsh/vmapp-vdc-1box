@@ -33,6 +33,12 @@ backupobject add --storage-id=bkst-demo2 --uuid bo-demolb --display-name='lb-cen
 image add local bo-demolb --account-id a-shpoolxx --uuid wmi-demolb --arch x86_64 --description 'lb-centos-openvz-md-64-stud.raw.gz local' --file-format raw --root-device uuid:f048b800-abcb-416d-81f2-521d5080af4d --service-type lb --is-public --display-name 'demolb' --is-cacheable
 image features wmi-demolb --virtio
 
+## centos1d
+
+backupobject add --storage-id=bkst-demo2 --uuid bo-centos1d --display-name='centos-6.3-openvz-md-x86_64-40G.raw.tar.gz' --object-key=centos-6.3-openvz-md-x86_64-40G.raw.tar.gz --size=42949672960 --allocation-size=197103308 --checksum=da77a98e0a7d343ac11d2b19771578a8 --container-format=tgz --description="40GB CentOS 6.3 OpenVZ MetadataDrive"
+image add local bo-centos1d --account-id a-shpoolxx --uuid wmi-centos1d --arch x86_64 --description 'centos-6.3-openvz-md-x86_64-40G.raw.tar.gz local' --file-format raw --root-device uuid:148bc5df-3fc5-4e93-8a16-7328907cb1c0 --service-type std --is-public --display-name 'centos1d' --is-cacheable
+image features wmi-demolb --virtio
+
 # network dc
 
 network dc add public
