@@ -6,19 +6,43 @@
     address = "192.168.2.0/24"
 
     router [address = "192.168.2.1"];
-    kvmbox [address = "192.168.2.XX"];
+
+    group bare {
+      "linuxbox[br0]" [address = "192.168.2.XX"];
+    }
   }
 
-  network vboxnet {
+  network iptables {
+    address = "-t nat"
+
+    "MASQUERADE[vboxbr0]" [shape = cloud, label = "MASQUERADE"];
+    "MASQUERADE[vboxbr0]" [address = "-o linuxbox[br0]"];
+    "linuxbox[br0]";
+  }
+
+  network vboxbr0 {
     address = "10.0.2.2/24";
 
-    kvmbox [address = "10.0.2.2"];
-    vdcbox [address = "10.0.2.15"];
+    group bare {
+      color = "#ffffff";
+      "linuxbox[vboxbr0]" [address = "10.0.2.2"];
+    }
+
+    group vm {
+      color = "#ffffff";
+      "vdc1box[eth0]" [address = "10.0.2.15"];
+    }
 
     group insts {
       color = "#ffffff";
-      "i-100"[address = "10.0.2.100"];
-      "i-101"[address = "10.0.2.101"];
+      "i-100[eth0]" [address = "10.0.2.100"];
+      "i-101[eth0]" [address = "10.0.2.101"];
     }
+
+    group netfilter {
+      color = "#ffffff";
+      "MASQUERADE[vboxbr0]" [address = "-s 10.0.2.0/24"];
+    }
+
   }
 }
