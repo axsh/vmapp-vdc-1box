@@ -2,14 +2,23 @@
 :PREROUTING ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
--A PREROUTING  -i br0 -p tcp -m tcp --dport 2022 -j DNAT --to-destination 10.0.2.15:22
--A PREROUTING  -i br0 -p tcp -m tcp --dport 9000 -j DNAT --to-destination 10.0.2.15:9000
--A PREROUTING  -i br0 -p tcp -m tcp --dport 9003 -j DNAT --to-destination 10.0.2.15:9003
--A POSTROUTING -o br0 -s 10.0.2.0/24 -j MASQUERADE
+-A PREROUTING  -i vboxbr0 -p tcp -m tcp --dport 2022 -j DNAT --to-destination 10.0.2.15:22
+-A PREROUTING  -i vboxbr0 -p tcp -m tcp --dport 9000 -j DNAT --to-destination 10.0.2.15:9000
+-A PREROUTING  -i vboxbr0 -p tcp -m tcp --dport 9003 -j DNAT --to-destination 10.0.2.15:9003
+-A POSTROUTING -o vboxbr0 -s 10.0.2.0/24 -j MASQUERADE
 COMMIT
 
 *filter
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport   22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 9000 -j ACCEPT
+-A INPUT -i vboxbr0 -p udp -m udp --dport 67 -j ACCEPT
+-A INPUT -i vboxbr0 -p tcp -m tcp --dport 67 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+#-A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
