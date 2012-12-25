@@ -7,4 +7,4 @@ set -e
 
 ## main
 
-rpm -ql epel-release >/dev/null || yum install -y http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-7.noarch.rpm
+rpm -ql epel-release >/dev/null || rpm -ivh http://dlc.wakame.axsh.jp.s3-website-us-east-1.amazonaws.com/epel-release
