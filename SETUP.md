@@ -1,5 +1,8 @@
 ### pre-setup
 
+    $ cp -i jeos_profile.sh.example jeos_profile.sh
+    $ vi jeos_profile.sh
+
     $ ./prepare-vmimage.sh
     $ ln -s jeos_profile.sh config.env.vmapp
 
