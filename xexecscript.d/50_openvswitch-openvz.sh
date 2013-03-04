@@ -6,6 +6,11 @@
 #
 set -e
 
+case "${VDC_HYPERVISOR}" in
+openvz) ;;
+*) exit 0 ;;
+esac
+
 chroot $1 $SHELL <<'EOS'
 declare arch=$(arch)
 declare basearch=
