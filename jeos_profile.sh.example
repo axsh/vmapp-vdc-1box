@@ -2,7 +2,7 @@
 # [disk]
 #
 
-rootsize= # $((1024 * 10))
+rootsize=$((1024 * 10))
 swapsize=0
 
 #
@@ -37,14 +37,10 @@ firstlogin= # vmconfig/firstlogin.sh
 
 addpkg="vim-minimal screen git make sudo ntp ntpdate"
 
-#nictab=   # vmconfig/nictab.txt
+nictab=nictab.${ASHIBA_ENV}.txt
 #routetab= # vmconfig/routetab.txt
 
 ## [wakame-vdc] internal system configuration script
-
-export gw=10.0.2.2
-export ip=10.0.2.15
-export mask=255.255.255.0
 
 #
 # [hypervisor]
