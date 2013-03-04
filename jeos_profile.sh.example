@@ -38,7 +38,7 @@ firstlogin= # vmconfig/firstlogin.sh
 addpkg="vim-minimal screen git make sudo ntp ntpdate"
 epel_uri=http://dlc.wakame.axsh.jp.s3-website-us-east-1.amazonaws.com/epel-release
 
-nictab=nictab.${ASHIBA_ENV}.txt
+nictab=nictab.${VDC_EDGE_NETWORKING}.txt
 #routetab= # vmconfig/routetab.txt
 
 ## [wakame-vdc] internal system configuration script
@@ -54,7 +54,7 @@ hypervisor=kvm
 #
 
 name=vdc1box
-raw=1box-${ASHIBA_ENV}.$(date +%Y%m%d).01.$(arch).raw
+raw=1box-${VDC_EDGE_NETWORKING}.$(date +%Y%m%d).01.$(arch).raw
 image_path=${raw}
 
 cpu_num=  # ; 2

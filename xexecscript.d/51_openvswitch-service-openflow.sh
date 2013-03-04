@@ -6,7 +6,7 @@
 #
 set -e
 
-case "${ASHIBA_ENV}" in
+case "${VDC_EDGE_NETWORKING}" in
 openflow) ;;
 *) exit 0;;
 esac
