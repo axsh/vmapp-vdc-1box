@@ -1,53 +1,70 @@
-# -*-Shell-script-*-
 #
-# requires:
-#  bash
+# [disk]
 #
 
-# vmbuilder
+rootsize=$((1024 * 10))
+swapsize=0
 
-## prepare
+#
+# [distro]
+#
 
-name=node$(printf "%03d" ${node_id:-1})
-#export ASHIBA_ENV=
+distro_arch=x86_64
+distro_name=centos
+distro_ver=6
 
-## disk layout
+keepcache=0
+selinux=0
 
-raw=$(pwd)/${name}.raw
-#rootsize=$((1024 * 8))
-#bootsize=0
-#swapsize=0
+hostname=wakame-vdc-1box
 
-## network configuration
+rootpass= # must be empty to lock root account
+devel_user=centos
+devel_pass=centos
 
-#hostname=${name}
-#gw=192.0.2.1
-#ip=192.0.2.$(printf %d ${node_id:-1})
-#net=
-#mask=
-#bcast=
+ssh_key=
+ssh_user_key=
+sshd_passauth=yes
 
-nictab=$(pwd)/${name}.nictab # nic layout
+fstab_type=label
 
-## account
-
-#rootpass=root
-
-## post install
+sudo_requiretty=0
 
 execscript=$(pwd)/execscript.sh
-copy=$(pwd)/copy.txt
+copydir=$(pwd)/guestroot/
+firstboot=  # vmconfig/firstboot.sh
+firstlogin= # vmconfig/firstlogin.sh
 
-# kvm-ctl
+addpkg="vim-minimal screen git make sudo ntp ntpdate"
+epel_uri=http://dlc.wakame.axsh.jp.s3-website-us-east-1.amazonaws.com/epel-release
 
+nictab=nictab.${ASHIBA_ENV}.txt
+#routetab= # vmconfig/routetab.txt
+
+## [wakame-vdc] internal system configuration script
+
+#
+# [hypervisor]
+#
+
+hypervisor=kvm
+
+#
+# [kvm]
+#
+
+name=vdc1box
+raw=1box-${ASHIBA_ENV}.$(date +%Y%m%d).01.$(arch).raw
 image_path=${raw}
-#cpu_num=1
 
-viftab=$(pwd)/${name}.viftab # vif layout
+cpu_num=  # ; 2
+mem_size= # ;$((1024 * 2))
 
-    vnc_port=$((1001 + ${node_id:-1}))
-monitor_port=$((4444 + ${node_id:-1}))
- serial_port=$((5555 + ${node_id:-1}))
+vnc_addr= # ; 127.0.0.1
+vnc_port= # ; 101
 
-# mix jeos
-[[ -f $(pwd)/jeosrc.sh ]] && . $(pwd)/jeosrc.sh || :
+serial_addr= # ; 127.0.0.1
+serial_port= # ; 5555
+
+monitor_addr= # ; 127.0.0.1
+monitor_port= # ; 4444
