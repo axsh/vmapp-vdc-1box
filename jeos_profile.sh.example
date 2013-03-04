@@ -18,7 +18,7 @@ selinux=0
 
 hostname=wakame-vdc-1box
 
-rootpass=root
+rootpass= # must be empty to lock root account
 devel_user=centos
 devel_pass=centos
 
