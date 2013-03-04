@@ -54,7 +54,7 @@ hypervisor=kvm
 #
 
 name=vdc1box
-raw=1box-${VDC_EDGE_NETWORKING}.$(date +%Y%m%d).01.$(arch).raw
+raw=1box-${VDC_HYPERVISOR}.${VDC_EDGE_NETWORKING}.$(arch).$(date +%Y%m%d).01.raw
 image_path=${raw}
 
 cpu_num=  # ; 2
