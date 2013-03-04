@@ -30,7 +30,7 @@ fstab_type=label
 
 sudo_requiretty=0
 
-execscript=$(pwd)/execscript.sh
+xexecscript="$(pwd)/xexecscript.d/*.sh"
 copydir=$(pwd)/guestroot/
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
