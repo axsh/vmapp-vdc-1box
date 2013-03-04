@@ -8,9 +8,14 @@ set -e
 
 echo "doing execscript.sh: $1"
 
-chroot $1 $SHELL <<EOS
-yum install -y wakame-vdc-hva-openvz-vmapp-config
+case "${VDC_HYPERVISOR}" in
+openvz) ;;
+*) exit 0 ;;
+esac
 
-/opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh add
-/opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh enable
+chroot $1 $SHELL <<EOS
+  yum install -y wakame-vdc-hva-openvz-vmapp-config
+
+  /opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh add
+  /opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh enable
 EOS
