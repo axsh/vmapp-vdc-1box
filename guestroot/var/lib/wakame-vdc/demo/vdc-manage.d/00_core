@@ -1,8 +1,3 @@
-# host node (hn-*)
-
-host add hva.openvz32 --force --uuid hn-openvz32 --cpu-cores 100 --memory-size 400000 --hypervisor openvz --arch x86
-host add hva.openvz64 --force --uuid hn-openvz64 --cpu-cores 100 --memory-size 400000 --hypervisor openvz --arch x86_64
-
 # storage node (sta)
 
 storage add sta.demo1 --force --uuid sn-demo1 --base-path /opt/axsh/wakame-vdc/volumes --disk-space 1048576 --ipaddr 127.0.0.1 --storage-type raw --snapshot-base-path /opt/axsh/wakame-vdc/snap
@@ -104,8 +99,6 @@ network dhcp addrange nw-demo8 10.1.0.10    10.1.0.240
 
 # resource mapping
 
-resourcegroup map hng-shhost hn-openvz32
-resourcegroup map hng-shhost hn-openvz64
 resourcegroup map sng-shstor sn-demo1
 resourcegroup map nwg-shnet  nw-demo1
 

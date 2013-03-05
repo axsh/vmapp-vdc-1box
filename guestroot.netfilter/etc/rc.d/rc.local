@@ -33,7 +33,6 @@ find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | egrep -
 
 ### copy hva.conf
 
-/bin/cp -f /etc/wakame-vdc/hva.conf.netfilter /etc/wakame-vdc/hva.conf
 [[ -f /etc/wakame-vdc/admin/admin.yml.demo ]] && /bin/cp -f /etc/wakame-vdc/admin/admin.yml.demo /etc/wakame-vdc/admin/admin.yml
 
 ### prepare to start vdc-*

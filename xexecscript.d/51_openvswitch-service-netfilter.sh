@@ -15,5 +15,4 @@ chroot $1 $SHELL <<EOS
   # default
   yum remove -y kmod-openvswitch-vzkernel
   chkconfig openvswitch off
-  cp -f /etc/rc.d/rc.local.netfilter /etc/rc.d/rc.local
 EOS

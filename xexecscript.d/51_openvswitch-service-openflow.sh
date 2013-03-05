@@ -13,5 +13,4 @@ esac
 
 chroot $1 $SHELL <<EOS
   /opt/axsh/wakame-vdc/rpmbuild/helpers/set-openvswitch-conf.sh
-  cp -f /etc/rc.d/rc.local.openflow /etc/rc.d/rc.local
 EOS
