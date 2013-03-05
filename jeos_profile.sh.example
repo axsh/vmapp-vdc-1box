@@ -31,7 +31,7 @@ fstab_type=label
 sudo_requiretty=0
 
 xexecscript="$(pwd)/xexecscript.d/*.sh"
-copydir=$(pwd)/guestroot/
+copydir="$(pwd)/guestroot/ $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/"
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
