@@ -31,7 +31,11 @@ fstab_type=label
 sudo_requiretty=0
 
 xexecscript="$(pwd)/xexecscript.d/*.sh"
-copydir="$(pwd)/guestroot/ $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/"
+copydir="
+  $([[ -d $(pwd)/guestroot/                        ]] && echo $(pwd)/guestroot/                       )
+  $([[ -d $(pwd)/guestroot.${VDC_HYPERVISOR}/      ]] && echo $(pwd)/guestroot.${VDC_HYPERVISOR}/     )
+  $([[ -d $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/ ]] && echo $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/)
+"
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
