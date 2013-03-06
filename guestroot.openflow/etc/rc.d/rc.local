@@ -48,5 +48,7 @@ sed -i -e "s,example.com,10.0.2.15," /etc/wakame-vdc/dcmgr.conf
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
 
-#initctl start vdc-hva-worker ID=1box32
-initctl start vdc-hva-worker ID=1box64
+case "$(arch)" in
+  i686) initctl start vdc-hva-worker ID=1box32 ;;
+x86_64) initctl start vdc-hva-worker ID=1box64 ;;
+esac
