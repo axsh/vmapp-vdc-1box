@@ -10,7 +10,7 @@ set -x
 
 readonly abs_dirname=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)
 declare vmimage_base_path=${abs_dirname}/guestroot/var/lib/wakame-vdc/images
-declare vmimage_base_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/vmimage
+declare vmimage_base_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/1box/vmimage/
 
 function deploy_vmimage() {
   local vmimage_basename=$1
