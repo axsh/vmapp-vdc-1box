@@ -40,7 +40,6 @@ firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
 addpkg="vim-minimal screen git make sudo ntp ntpdate"
-epel_uri=http://dlc.wakame.axsh.jp.s3-website-us-east-1.amazonaws.com/epel-release
 
 nictab=nictab.${VDC_EDGE_NETWORKING}.txt
 #routetab= # vmconfig/routetab.txt
