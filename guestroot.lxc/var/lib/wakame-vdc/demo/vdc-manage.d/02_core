@@ -1,14 +1,26 @@
 # vm image (wmi-*)
 # hierarchy: bkst-XXX / bo-XXX / wmi-XXX
 
-## centos1d
+## centos1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d  --display-name='centos-6.3.x86_64.lxc.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=255801182  --checksum=8f5b742d6e404c57867a1c63f75b38e0  --container-format=tgz  --description='centos-6.3.x86_64.lxc.md.raw.tar.gz'
-image add local bo-centos1d  --account-id a-shpoolxx  --uuid wmi-centos1d  --arch x86_64  --description 'centos-6.3.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d'  --is-cacheable
-image features wmi-centos1d --virtio
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.3.i686.lxc.md.raw.tar.gz'  --object-key=centos-6.3.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=254898328  --checksum=8ead93fa9f5c86c992f6dad0ad66a4b8  --container-format=tgz  --description='centos-6.3.i686.lxc.md.raw.tar.gz'
+image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86_64  --description 'centos-6.3.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
+image features wmi-centos1d32 --virtio
 
-## vanilla1d
+## centos1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d  --display-name='vanilla.x86_64.lxc.md.raw.tar.gz'  --object-key=vanilla.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=255811610  --checksum=cd2c6a7f5482887f9c700890899ba3fe  --container-format=tgz  --description='vanilla.x86_64.lxc.md.raw.tar.gz'
-image add local bo-vanilla1d  --account-id a-shpoolxx  --uuid wmi-vanilla1d  --arch x86_64  --description 'vanilla.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d'  --is-cacheable
-image features wmi-vanilla1d --virtio
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.3.x86_64.lxc.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=255801182  --checksum=8f5b742d6e404c57867a1c63f75b38e0  --container-format=tgz  --description='centos-6.3.x86_64.lxc.md.raw.tar.gz'
+image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.3.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
+image features wmi-centos1d64 --virtio
+
+## vanilla1d32
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d32  --display-name='vanilla.i686.lxc.md.raw.tar.gz'  --object-key=vanilla.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=254872491  --checksum=60fd2139558014b56114fbb4b951c287  --container-format=tgz  --description='vanilla.i686.lxc.md.raw.tar.gz'
+image add local bo-vanilla1d32  --account-id a-shpoolxx  --uuid wmi-vanilla1d32  --arch x86_64  --description 'vanilla.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d32'  --is-cacheable
+image features wmi-vanilla1d32 --virtio
+
+## vanilla1d64
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d64  --display-name='vanilla.x86_64.lxc.md.raw.tar.gz'  --object-key=vanilla.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=255811610  --checksum=cd2c6a7f5482887f9c700890899ba3fe  --container-format=tgz  --description='vanilla.x86_64.lxc.md.raw.tar.gz'
+image add local bo-vanilla1d64  --account-id a-shpoolxx  --uuid wmi-vanilla1d64  --arch x86_64  --description 'vanilla.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d64'  --is-cacheable
+image features wmi-vanilla1d64 --virtio

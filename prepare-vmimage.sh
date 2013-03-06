@@ -27,11 +27,13 @@ function deploy_vmimage() {
   }
 }
 
-arch=x86_64
+for arch in x86_64 i686; do
 
 for hypervisor in kvm lxc openvz; do
   for vmimage in centos-6.3 vanilla; do
     echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
     deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
   done
+done
+
 done

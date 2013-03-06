@@ -1,14 +1,26 @@
 # vm image (wmi-*)
 # hierarchy: bkst-XXX / bo-XXX / wmi-XXX
 
-## centos1d
+## centos1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d  --display-name='centos-6.3.x86_64.openvz.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=255809027  --checksum=327874ac079cea763de452011c771483  --container-format=tgz  --description='centos-6.3.x86_64.openvz.md.raw.tar.gz'
-image add local bo-centos1d  --account-id a-shpoolxx  --uuid wmi-centos1d  --arch x86_64  --description 'centos-6.3.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d'  --is-cacheable
-image features wmi-centos1d --virtio
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.3.i686.openvz.md.raw.tar.gz'  --object-key=centos-6.3.i686.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=254879519  --checksum=43e2918171697174bb07e6cd42feb55a  --container-format=tgz  --description='centos-6.3.i686.openvz.md.raw.tar.gz'
+image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86_64  --description 'centos-6.3.i686.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
+image features wmi-centos1d32 --virtio
 
-## vanilla1d
+## centos1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d  --display-name='vanilla.x86_64.openvz.md.raw.tar.gz'  --object-key=vanilla.x86_64.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=255800690  --checksum=59c2ee2ae4a874d0cee1a52693778da9  --container-format=tgz  --description='vanilla.x86_64.openvz.md.raw.tar.gz'
-image add local bo-vanilla1d  --account-id a-shpoolxx  --uuid wmi-vanilla1d  --arch x86_64  --description 'vanilla.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d'  --is-cacheable
-image features wmi-vanilla1d --virtio
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.3.x86_64.openvz.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=255809027  --checksum=327874ac079cea763de452011c771483  --container-format=tgz  --description='centos-6.3.x86_64.openvz.md.raw.tar.gz'
+image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.3.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
+image features wmi-centos1d64 --virtio
+
+## vanilla1d32
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d32  --display-name='vanilla.i686.openvz.md.raw.tar.gz'  --object-key=vanilla.i686.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=254885410  --checksum=1631fddd83123ac407d5bc60983dd0dd  --container-format=tgz  --description='vanilla.i686.openvz.md.raw.tar.gz'
+image add local bo-vanilla1d32  --account-id a-shpoolxx  --uuid wmi-vanilla1d32  --arch x86_64  --description 'vanilla.i686.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d32'  --is-cacheable
+image features wmi-vanilla1d32 --virtio
+
+## vanilla1d64
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d64  --display-name='vanilla.x86_64.openvz.md.raw.tar.gz'  --object-key=vanilla.x86_64.openvz.md.raw.tar.gz  --size=1073741824  --allocation-size=255800690  --checksum=59c2ee2ae4a874d0cee1a52693778da9  --container-format=tgz  --description='vanilla.x86_64.openvz.md.raw.tar.gz'
+image add local bo-vanilla1d64  --account-id a-shpoolxx  --uuid wmi-vanilla1d64  --arch x86_64  --description 'vanilla.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d64'  --is-cacheable
+image features wmi-vanilla1d64 --virtio

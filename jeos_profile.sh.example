@@ -9,7 +9,6 @@ swapsize=0
 # [distro]
 #
 
-distro_arch=x86_64
 distro_name=centos
 distro_ver=6
 
