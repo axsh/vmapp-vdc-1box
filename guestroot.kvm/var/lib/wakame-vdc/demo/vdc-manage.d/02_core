@@ -6,3 +6,9 @@
 backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d  --display-name='centos-6.3.x86_64.kvm.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=329879392  --checksum=911279dec5dcbac227ed1eb5dd290e42  --container-format=tgz  --description='centos-6.3.x86_64.kvm.md.raw.tar.gz'
 image add local bo-centos1d  --account-id a-shpoolxx  --uuid wmi-centos1d  --arch x86_64  --description 'centos-6.3.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d'  --is-cacheable
 image features wmi-centos1d --virtio
+
+## vanilla1d
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d  --display-name='vanilla.x86_64.kvm.md.raw.tar.gz'  --object-key=vanilla.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=329888464  --checksum=bfb21942c71ff83418921fb399970ffe  --container-format=tgz  --description='vanilla.x86_64.kvm.md.raw.tar.gz'
+image add local bo-vanilla1d  --account-id a-shpoolxx  --uuid wmi-vanilla1d  --arch x86_64  --description 'vanilla.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d'  --is-cacheable
+image features wmi-vanilla1d --virtio
