@@ -38,7 +38,7 @@ copydir="
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
-addpkg="vim-minimal screen git make sudo ntp ntpdate"
+addpkg="vim-minimal screen git make sudo ntp ntpdate man"
 
 nictab=nictab.${VDC_EDGE_NETWORKING}.txt
 #routetab= # vmconfig/routetab.txt
