@@ -41,7 +41,6 @@ sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
 
 ### change parameter to run lb instance
 
-sed -i -e "s,management_network.*,management_network 'nw-demo1'," /etc/wakame-vdc/dcmgr.conf
 sed -i -e "s,example.com,10.0.2.15," /etc/wakame-vdc/dcmgr.conf
 
 ### start services

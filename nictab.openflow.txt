@@ -1,2 +1,4 @@
 ifname=eth0 bridge=br0 iftype=ovsport
+ifname=eth1 bridge=br1 iftype=ovsport
 ifname=br0 ip=10.0.2.15 mask=255.255.255.0 net=10.0.2.0 bcast=10.0.2.255 gw=10.0.2.2 iftype=ovsbridge
+ifname=br1 ip=10.1.0.1  mask=255.255.255.0 net=10.1.0.0 bcast=10.1.0.255 gw=         iftype=ovsbridge
