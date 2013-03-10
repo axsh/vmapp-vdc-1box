@@ -15,4 +15,5 @@ esac
 
 chroot $1 $SHELL <<EOS
   yum install -y wakame-vdc-hva-kvm-vmapp-config
+  sed -i "s,hypervisor: .*,hypervisor: 'kvm'," /etc/wakame-vdc/convert_specs/load_balancer.yml
 EOS
