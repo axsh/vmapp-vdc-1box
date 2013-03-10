@@ -29,11 +29,10 @@ done
 export HOME=/root
 
 find /var/lib/wakame-vdc/demo/vdc-manage.d/ -type f | sort | xargs cat | egrep -v '^#|^$' | /opt/axsh/wakame-vdc/dcmgr/bin/vdc-manage
-find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | egrep -v '^#|^$' |  /opt/axsh/wakame-vdc/frontend/dcmgr_gui/bin/gui-manage
+find /var/lib/wakame-vdc/demo/gui-manage.d/ -type f | sort | xargs cat | egrep -v '^#|^$' | /opt/axsh/wakame-vdc/frontend/dcmgr_gui/bin/gui-manage
 
 ### copy hva.conf
 
-/bin/cp -f /etc/wakame-vdc/hva.conf.netfilter /etc/wakame-vdc/hva.conf
 [[ -f /etc/wakame-vdc/admin/admin.yml.demo ]] && /bin/cp -f /etc/wakame-vdc/admin/admin.yml.demo /etc/wakame-vdc/admin/admin.yml
 
 ### prepare to start vdc-*
@@ -42,12 +41,13 @@ sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
 
 ### change parameter to run lb instance
 
-sed -i -e "s,management_network.*,management_network 'nw-demo1'," /etc/wakame-vdc/dcmgr.conf
 sed -i -e "s,example.com,10.0.2.15," /etc/wakame-vdc/dcmgr.conf
 
 ### start services
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
 
-#initctl start vdc-hva-worker ID=openvz32
-initctl start vdc-hva-worker ID=openvz64
+case "$(arch)" in
+  i686) initctl start vdc-hva-worker ID=1box32 ;;
+x86_64) initctl start vdc-hva-worker ID=1box64 ;;
+esac

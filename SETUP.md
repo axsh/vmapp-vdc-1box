@@ -8,10 +8,10 @@
 
 ### build vm
 
-    $ sudo ASHIBA_ENV=openflow  ./jeos-ctl.sh build --config-path=./config.env.vmapp
-    $ sudo ASHIBA_ENV=netfilter ./jeos-ctl.sh build --config-path=./config.env.vmapp
+    $ sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=openflow  ./jeos-ctl.sh build --config-path=./config.env.vmapp
+    $ sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=netfilter ./jeos-ctl.sh build --config-path=./config.env.vmapp
 
 ### start vm
 
-    $ sudo ASHIBA_ENV=openflow  ./jeos-ctl.sh start --config-path=./config.env.vmapp
-    $ sudo ASHIBA_ENV=netfilter ./jeos-ctl.sh start --config-path=./config.env.vmapp
+    $ sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=openflow  ./jeos-ctl.sh start --config-path=./config.env.vmapp
+    $ sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=netfilter ./jeos-ctl.sh start --config-path=./config.env.vmapp

@@ -1,0 +1,26 @@
+# vm image (wmi-*)
+# hierarchy: bkst-XXX / bo-XXX / wmi-XXX
+
+## centos1d32
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.3.i686.kvm.md.raw.tar.gz'  --object-key=centos-6.3.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=322124356  --checksum=76c2575277e6ce8aff8d897b3ba75bb0  --container-format=tgz  --description='centos-6.3.i686.kvm.md.raw.tar.gz'
+image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86_64  --description 'centos-6.3.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
+image features wmi-centos1d32 --virtio
+
+## centos1d64
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.3.x86_64.kvm.md.raw.tar.gz'  --object-key=centos-6.3.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=329879392  --checksum=911279dec5dcbac227ed1eb5dd290e42  --container-format=tgz  --description='centos-6.3.x86_64.kvm.md.raw.tar.gz'
+image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.3.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
+image features wmi-centos1d64 --virtio
+
+## vanilla1d32
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d32  --display-name='vanilla.i686.kvm.md.raw.tar.gz'  --object-key=vanilla.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=322079515  --checksum=2ff850122d00af8022aefcf53146600a  --container-format=tgz  --description='vanilla.i686.kvm.md.raw.tar.gz'
+image add local bo-vanilla1d32  --account-id a-shpoolxx  --uuid wmi-vanilla1d32  --arch x86_64  --description 'vanilla.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d32'  --is-cacheable
+image features wmi-vanilla1d32 --virtio
+
+## vanilla1d64
+
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d64  --display-name='vanilla.x86_64.kvm.md.raw.tar.gz'  --object-key=vanilla.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=329888464  --checksum=bfb21942c71ff83418921fb399970ffe  --container-format=tgz  --description='vanilla.x86_64.kvm.md.raw.tar.gz'
+image add local bo-vanilla1d64  --account-id a-shpoolxx  --uuid wmi-vanilla1d64  --arch x86_64  --description 'vanilla.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d64'  --is-cacheable
+image features wmi-vanilla1d64 --virtio
