@@ -12,6 +12,10 @@ touch /var/lock/subsys/local
 
 /opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh stop
 
+### remove default vdc-hva system job config file
+
+[[ -f /etc/init/vdc-hva.conf ]] && rm -f /etc/init/vdc-hva.conf
+
 ### initialize database
 
 for dbname in wakame_dcmgr wakame_dcmgr_gui; do
