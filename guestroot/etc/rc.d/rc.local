@@ -42,6 +42,10 @@ sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
 ### change parameter to run lb instance
 
 sed -i -e "s,example.com,10.0.2.15," /etc/wakame-vdc/dcmgr.conf
+case "$(arch)" in
+  i686) sed -i -e "s,wmi-demolb,wmi-haproxy1d32," /etc/wakame-vdc/dcmgr.conf ;;
+x86_64) sed -i -e "s,wmi-demolb,wmi-haproxy1d64," /etc/wakame-vdc/dcmgr.conf ;;
+esac
 
 ### start services
 
