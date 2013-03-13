@@ -3,13 +3,13 @@
 
 ## centos1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.4.i686.kvm.md.raw.tar.gz'  --object-key=centos-6.4.i686.kvm.md.raw.tar.gz  --size=4294967296  --allocation-size=353753446  --checksum=8df32620f17fe4cecfc88512cdb07b19  --container-format=tgz  --description='centos-6.4.i686.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.4.i686.kvm.md.raw.tar.gz'  --object-key=centos-6.4.i686.kvm.md.raw.tar.gz  --size=4294967296  --allocation-size=354835258  --checksum=552f6abca0c3bf97df181729444b31ce  --container-format=tgz  --description='centos-6.4.i686.kvm.md.raw.tar.gz'
 image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86  --description 'centos-6.4.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
 image features wmi-centos1d32 --virtio
 
 ## centos1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.4.x86_64.kvm.md.raw.tar.gz'  --object-key=centos-6.4.x86_64.kvm.md.raw.tar.gz  --size=4294967296  --allocation-size=362553065  --checksum=5b1654ab90b0f1ac8a8a90abab2b96d1  --container-format=tgz  --description='centos-6.4.x86_64.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.4.x86_64.kvm.md.raw.tar.gz'  --object-key=centos-6.4.x86_64.kvm.md.raw.tar.gz  --size=4294967296  --allocation-size=366515900  --checksum=b86cd5b72c64cf3015868401e5edccda  --container-format=tgz  --description='centos-6.4.x86_64.kvm.md.raw.tar.gz'
 image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.4.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
 image features wmi-centos1d64 --virtio
 
@@ -27,24 +27,24 @@ image features wmi-vanilla1d64 --virtio
 
 ## lbnode1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.kvm.md.raw.tar.gz'  --object-key=lbnode.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=343135633  --checksum=0da3e2cdf1380deb76a5d1947f35ee19  --container-format=tgz  --description='lbnode.i686.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.kvm.md.raw.tar.gz'  --object-key=lbnode.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=349655932  --checksum=fe5478f44174d3d21604a31780d51a52  --container-format=tgz  --description='lbnode.i686.kvm.md.raw.tar.gz'
 image add local bo-lbnode1d32  --account-id a-shpoolxx  --uuid wmi-lbnode1d32  --arch x86  --description 'lbnode.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d32'  --is-cacheable
 image features wmi-lbnode1d32 --virtio
 
 ## lbnode1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.kvm.md.raw.tar.gz'  --object-key=lbnode.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=344722498  --checksum=9ca819328e8ed2d7445bcd5bbc4fa5ed  --container-format=tgz  --description='lbnode.x86_64.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.kvm.md.raw.tar.gz'  --object-key=lbnode.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=364780921  --checksum=6ad6389d4d734e6b82a71a11847b4b36  --container-format=tgz  --description='lbnode.x86_64.kvm.md.raw.tar.gz'
 image add local bo-lbnode1d64  --account-id a-shpoolxx  --uuid wmi-lbnode1d64  --arch x86_64  --description 'lbnode.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d64'  --is-cacheable
 image features wmi-lbnode1d64 --virtio
 
 ## haproxy1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=275367531  --checksum=4b0e3de53f27e231c6b0e84317956c27  --container-format=tgz  --description='lb-centos6-stud.i686.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=290757868  --checksum=989b90fcd1e38fa9a65ce09636dbd067  --container-format=tgz  --description='lb-centos6-stud.i686.kvm.md.raw.tar.gz'
 image add local bo-haproxy1d32  --account-id a-shpoolxx  --uuid wmi-haproxy1d32  --arch x86  --description 'lb-centos6-stud.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d32'  --is-cacheable
 image features wmi-haproxy1d32 --virtio
 
 ## haproxy1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=315692310  --checksum=00394c7c9d13a3658770e4896718e052  --container-format=tgz  --description='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=295071152  --checksum=fb2de2af4f46ceb9d1115a74cd770777  --container-format=tgz  --description='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'
 image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6-stud.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d64'  --is-cacheable
 image features wmi-haproxy1d64 --virtio
