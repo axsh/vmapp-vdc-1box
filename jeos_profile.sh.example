@@ -41,7 +41,7 @@ firstlogin= # vmconfig/firstlogin.sh
 addpkg="
  vim-minimal screen git make sudo ntp ntpdate
  man
- nmap lsof strace tcpdump traceroute telnet ltrace dnsutils sysstat nc
+ nmap lsof strace tcpdump traceroute telnet ltrace dnsutils sysstat nc wireshark
 "
 
 nictab=nictab.${VDC_EDGE_NETWORKING}.txt
