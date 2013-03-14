@@ -39,12 +39,12 @@ image features wmi-lbnode1d64 --virtio
 
 ## haproxy1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=290757868  --checksum=989b90fcd1e38fa9a65ce09636dbd067  --container-format=tgz  --description='lb-centos6-stud.i686.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=273528853  --checksum=d36bb73afbf4c6ae6c91486c9dbc14ae  --container-format=tgz  --description='lb-centos6-stud.i686.kvm.md.raw.tar.gz'
 image add local bo-haproxy1d32  --account-id a-shpoolxx  --uuid wmi-haproxy1d32  --arch x86  --description 'lb-centos6-stud.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d32'  --is-cacheable
 image features wmi-haproxy1d32 --virtio
 
 ## haproxy1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=295071152  --checksum=fb2de2af4f46ceb9d1115a74cd770777  --container-format=tgz  --description='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=298231852  --checksum=c82bd6b63b13b8b48a1ceb8c9922a298  --container-format=tgz  --description='lb-centos6-stud.x86_64.kvm.md.raw.tar.gz'
 image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6-stud.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d64'  --is-cacheable
 image features wmi-haproxy1d64 --virtio
