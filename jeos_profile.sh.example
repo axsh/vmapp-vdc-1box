@@ -38,7 +38,11 @@ copydir="
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
-addpkg="vim-minimal screen git make sudo ntp ntpdate man"
+addpkg="
+ vim-minimal screen git make sudo ntp ntpdate
+ man
+ nmap lsof strace tcpdump traceroute telnet ltrace dnsutils sysstat nc wireshark
+"
 
 nictab=nictab.${VDC_EDGE_NETWORKING}.txt
 #routetab= # vmconfig/routetab.txt
@@ -56,7 +60,7 @@ hypervisor=kvm
 #
 
 name=vdc1box
-raw=1box-${VDC_HYPERVISOR}.${VDC_EDGE_NETWORKING}.$(arch).$(date +%Y%m%d).01.raw
+raw=1box-${VDC_HYPERVISOR}.${VDC_EDGE_NETWORKING}.$(arch).raw
 image_path=${raw}
 
 cpu_num=  # ; 2
