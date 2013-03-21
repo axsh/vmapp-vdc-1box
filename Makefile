@@ -3,9 +3,9 @@ SHELL=/bin/bash
 all:
 	git submodule update --init --recursive
 
-# lxc
-
 matrix: lxc kvm openvz
+
+# lxc
 
 lxc: lxc64 lxc32
 
