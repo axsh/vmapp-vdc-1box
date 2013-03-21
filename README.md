@@ -3,7 +3,7 @@ vmapp-vdc-1box
 
 ### pre-setup
 
-    $ cp -i jeos_profile.sh.example jeos_profile.sh
+    $ cp -i vmbuilder.conf.example vmbuilder.conf
     $ ./prepare-vmimage.sh
     $ make
 
