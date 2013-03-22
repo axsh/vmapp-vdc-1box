@@ -56,12 +56,14 @@ function start_box() {
   valid_hypervisor? ${hypervisor} || return 1
 
   sudo ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh start \
-   --vnc-port 1002 \
-   --vif-num  2 \
-   --mem-size 2048 \
-   --cpu-num  4 \
-   --brname vboxbr0 \
-   --image-path ./1box-${hypervisor}.netfilter.$(arch).raw
+   --vnc-port     ${vnc_port} \
+   --vif-num      ${vif_num}  \
+   --mem-size     ${mem_size} \
+   --cpu-num      ${cpu_num}  \
+   --brname       ${brname}   \
+   --monitor-port ${monitor_port} \
+   --serial-port  ${serial_port}  \
+   --image-path   ./1box-${hypervisor}.netfilter.$(arch).raw
 }
 
 function stop_box() {
@@ -69,13 +71,25 @@ function stop_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  echo quit | nc localhost 4444
+  echo quit | nc localhost ${monitor_port}
 }
 
 ## variables
 
+### this script
+
 declare cmd=${1:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
 declare hypervisor=${2:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
+
+### kvm-ctl.sh
+
+monitor_port=${monitor_port:-4444}
+vnc_port=${vnc_port:-1002}
+serial_port=${serial_port:-5555}
+vif_num=${vif_num:-2}
+mem_size=${mem_size:-2048}
+cpu_num=${cpu_num:-4}
+brname=${brname:-vboxbr0}
 
 ## validate
 
