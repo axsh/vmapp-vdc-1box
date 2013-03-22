@@ -1,32 +1,28 @@
-ashiba-skel
-===========
+vmapp-vdc-1box
+==============
 
-skeleton to build environments using vmbuilder's execscript/copy.
+[Wakame-VDC](https://github.com/axsh/wakame-vdc) demobox/testbox.
 
-System Requirements
--------------------
+pre-setup
+---------
 
-+ [vmbuilder.sh](https://github.com/hansode/vmbuilder/tree/master/kvm/rhel/6)
+```
+$ cp -i vmbuilder.conf.example vmbuilder.conf
+$ ./prepare-vmimage.sh
+$ make
+```
 
-Installing ashiba-skel
-----------------------
+controlling box
+---------------
 
-    $ git clone git://github.com/hansode/ashiba-skel.git
+```
+$ ./box-ctl.sh build [hypervisor]
+$ ./box-ctl.sh start [hypervisor]
+$ ./box-ctl.sh stop  [hypervisor]
+```
 
-vmbuilder.sh pre-setup
-----------------------
+hypervisor:
 
-    $ cd ashiba-skel
-    $ git submodule init
-    $ git submodule update
-
-Configuring jeos params
------------------------
-
-    $ cp -i jeos_profile.sh.example jeos_profile.sh
-    $ vi jeos_profile.sh
-
-Building virtual machine image with ashiba
-------------------------------------------
-
-    $ sudo ./jeos-ctl.sh build --config-path=./jeos_profile.sh
++ lxc
++ openvz
++ kvm
