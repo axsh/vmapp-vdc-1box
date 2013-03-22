@@ -30,11 +30,14 @@ fstab_type=label
 sudo_requiretty=0
 
 xexecscript="$(pwd)/xexecscript.d/*.sh"
-copydir="
-  $([[ -d $(pwd)/guestroot/                        ]] && echo $(pwd)/guestroot/                       )
-  $([[ -d $(pwd)/guestroot.${VDC_HYPERVISOR}/      ]] && echo $(pwd)/guestroot.${VDC_HYPERVISOR}/     )
-  $([[ -d $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/ ]] && echo $(pwd)/guestroot.${VDC_EDGE_NETWORKING}/)
-"
+copy="$(pwd)/copy.txt"
+  for i in guestroot guestroot.${VDC_HYPERVISOR} guestroot.${VDC_EDGE_NETWORKING}; do
+    [[ -d ${i} ]] || continue
+    find ${i} -type f | egrep -v '/.gitkeep$' | while read line; do
+      echo ${line} ${line##${i}}
+    done
+  done > ${copy}
+
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
