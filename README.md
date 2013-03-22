@@ -1,13 +1,28 @@
 vmapp-vdc-1box
 ==============
 
-### pre-setup
+[Wakame-VDC](https://github.com/axsh/wakame-vdc) demobox/testbox.
 
-    $ cp -i vmbuilder.conf.example vmbuilder.conf
-    $ ./prepare-vmimage.sh
-    $ make
+pre-setup
+---------
 
-### build & run
+```
+$ cp -i vmbuilder.conf.example vmbuilder.conf
+$ ./prepare-vmimage.sh
+$ make
+```
 
-    $ ./build-box.mk lxc
-    $ ./build-box.mk openvz
+controlling box
+---------------
+
+```
+$ ./box-ctl.sh build [hypervisor]
+$ ./box-ctl.sh start [hypervisor]
+$ ./box-ctl.sh stop  [hypervisor]
+```
+
+hypervisor:
+
++ lxc
++ openvz
++ kvm
