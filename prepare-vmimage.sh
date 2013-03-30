@@ -3,7 +3,7 @@
 # requires:
 #  bash
 #  dirname, pwd
-#  curl, zcat, cp
+#  mkdir, curl, zcat, cp
 #
 set -e
 #set -x
@@ -21,6 +21,8 @@ function deploy_vmimage() {
 
   local vmimage_uri=${vmimage_base_uri}/${vmimage_basename}.${hypervisor}.${multi_suffix}
   local vmimage_path=${vmimage_base_path}/${vmimage_basename}.${hypervisor}.${multi_suffix}
+
+  [[ -d ${vmimage_base_path} ]] || mkdir -p ${vmimage_base_path}
 
   [[ -f "${vmimage_path}" ]] || {
     curl -fsSkL -o ${vmimage_path} -R ${vmimage_uri}
