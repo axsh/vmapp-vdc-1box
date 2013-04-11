@@ -42,6 +42,7 @@ firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
 addpkg="
+ git
  vim-minimal screen git make sudo ntp ntpdate
  man
  nmap lsof strace tcpdump traceroute telnet ltrace dnsutils sysstat nc wireshark
