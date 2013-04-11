@@ -10,7 +10,8 @@ touch /var/lock/subsys/local
 
 ### stop services
 
-/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh stop
+initctl stop vdc-hva
+initctl stop vdc-collector
 
 ### remove default vdc-hva system job config file
 
@@ -62,7 +63,8 @@ esac
 
 ### start services
 
-/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
+initctl start vdc-collector
+initctl start vdc-hva
 
 case "$(arch)" in
   i686) initctl start vdc-hva-worker ID=1box32 ;;
