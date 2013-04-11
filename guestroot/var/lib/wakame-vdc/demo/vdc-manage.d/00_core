@@ -76,6 +76,8 @@ resourcegroup map nwg-shnet  nw-demo1
 
 # ssh keypair
 
+## should be deleted keypair dependency in LB/hva.conf.
+
 keypair add --account-id a-shpoolxx --uuid ssh-demo --private-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pri.pem --public-key=/opt/axsh/wakame-vdc/tests/vdc.sh.d/pub.pem --description "demo key1" --service-type std --display-name "demo"
 
 # mac address range
