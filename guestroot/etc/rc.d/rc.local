@@ -10,7 +10,8 @@ touch /var/lock/subsys/local
 
 ### stop services
 
-/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh stop
+initctl stop vdc-hva
+initctl stop vdc-collector
 
 ### remove default vdc-hva system job config file
 
@@ -18,15 +19,24 @@ touch /var/lock/subsys/local
 
 ### initialize database
 
-for dbname in wakame_dcmgr wakame_dcmgr_gui; do
+for dbname in wakame_dcmgr wakame_dcmgr_gui zabbix; do
   yes | mysqladmin -uroot drop ${dbname} || :
-  mysqladmin -uroot create ${dbname}
+  mysqladmin -uroot create ${dbname} --default-character-set=utf8
 done
+
+#### wakame-vdc
 
 for dirpath in /opt/axsh/wakame-vdc/dcmgr /opt/axsh/wakame-vdc/frontend/dcmgr_gui; do
   cd ${dirpath}
   /opt/axsh/wakame-vdc/ruby/bin/bundle exec rake db:init --trace
 done
+
+#### zabbix
+
+mysql -uroot <<'EOS'
+  grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix';
+  flush privileges;
+EOS
 
 ### add core data
 
@@ -53,7 +63,8 @@ esac
 
 ### start services
 
-/opt/axsh/wakame-vdc/rpmbuild/helpers/self-init-vdcbox.sh start
+initctl start vdc-collector
+initctl start vdc-hva
 
 case "$(arch)" in
   i686) initctl start vdc-hva-worker ID=1box32 ;;
