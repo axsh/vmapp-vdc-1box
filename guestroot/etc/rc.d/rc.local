@@ -64,7 +64,6 @@ esac
 ### start services
 
 initctl start vdc-collector
-initctl start vdc-hva
 
 case "$(arch)" in
   i686) initctl start vdc-hva-worker ID=1box32 ;;
