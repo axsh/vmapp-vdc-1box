@@ -24,7 +24,7 @@ EOS
 
 chroot $1 $SHELL <<EOS
   chkconfig --list zabbix-server
- #chkconfig zabbix-server on
+  chkconfig zabbix-server on
 EOS
 
 cat <<EOF > $1/etc/php.d/zabbix.ini
