@@ -13,7 +13,7 @@ function valid_cmd?() {
   local cmd=$1
 
   case "${cmd}" in
-  build|start|stop|dist|raw2vdi|raw2vmdk)
+  build|start|stop|raw2vdi|raw2vmdk|dist_raw|dist_vdi|dist_vmdk)
     ;;
   *)
     echo "[ERROR] unknown cmd: ${cmd} (${BASH_SOURCE[0]##*/}:${LINENO})" >&2
@@ -74,15 +74,32 @@ function stop_box() {
   echo quit | nc localhost ${monitor_port}
 }
 
-function dist_box() {
+function dist_raw_box() {
   local hypervisor=$1
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
   local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
-  time tar zScvpf ${image_path}.tar.gz ${image_path}
+  time tar zScvpf ${image_path}.$(date +%Y%m%d).tar.gz ${image_path}
 }
 
+function dist_vdi_box() {
+  local hypervisor=$1
+  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
+  valid_hypervisor? ${hypervisor} || return 1
+
+  local image_path=./1box-${hypervisor}.netfilter.$(arch).vdi
+  time zip ${image_path}.$(date +%Y%m%d).zip ${image_path}
+}
+
+function dist_vmdk_box() {
+  local hypervisor=$1
+  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
+  valid_hypervisor? ${hypervisor} || return 1
+
+  local image_path=./1box-${hypervisor}.netfilter.$(arch).vmdk
+  time zip ${image_path}.$(date +%Y%m%d).zip ${image_path}
+}
 
 function raw2vdi_box() {
   local hypervisor=$1
