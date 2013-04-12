@@ -13,7 +13,7 @@ function valid_cmd?() {
   local cmd=$1
 
   case "${cmd}" in
-  build|start|stop|dist)
+  build|start|stop|dist|raw2vdi)
     ;;
   *)
     echo "[ERROR] unknown cmd: ${cmd} (${BASH_SOURCE[0]##*/}:${LINENO})" >&2
@@ -81,6 +81,16 @@ function dist_box() {
 
   local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
   time tar zScvpf ${image_path}.tar.gz ${image_path}
+}
+
+
+function raw2vdi_box() {
+  local hypervisor=$1
+  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
+  valid_hypervisor? ${hypervisor} || return 1
+
+  local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
+  time ./vmbuilder/kvm/rhel/6/misc/raw2vdi.sh ${image_path}
 }
 
 ## variables
