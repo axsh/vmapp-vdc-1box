@@ -33,7 +33,7 @@ xexecscript="$(pwd)/xexecscript.d/*.sh"
 copy="$(pwd)/copy.txt"
   for i in guestroot guestroot.${VDC_HYPERVISOR} guestroot.${VDC_EDGE_NETWORKING} guestroot.local; do
     [[ -d ${i} ]] || continue
-    find ${i} -type f | egrep -v '/.gitkeep$' | while read line; do
+    find -L ${i} ! -type d | egrep -v '/.gitkeep$' | while read line; do
       echo ${line} ${line##${i}}
     done
   done > ${copy}
