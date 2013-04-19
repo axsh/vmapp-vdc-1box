@@ -1,0 +1,1 @@
+guestroot.openflow/etc/wakame-vdc/hva.conf /etc/wakame-vdc/hva.conf

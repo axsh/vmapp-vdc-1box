@@ -4,8 +4,6 @@
 # You can put your own initialization stuff in here if you don't
 # want to do the full Sys V style init stuff.
 
-touch /var/lock/subsys/local
-
 ## Wakame-VDC
 
 ### stop services
@@ -55,7 +53,7 @@ sed -i "s,^#RUN=.*,RUN=yes," /etc/default/vdc-*
 
 ### change parameter to run lb instance
 
-sed -i -e "s,example.com,10.0.2.15," /etc/wakame-vdc/dcmgr.conf
+sed -i -e "s,example.com,10.1.0.1," /etc/wakame-vdc/dcmgr.conf
 case "$(arch)" in
   i686) sed -i -e "s,wmi-demolb,wmi-haproxy1d32," /etc/wakame-vdc/dcmgr.conf ;;
 x86_64) sed -i -e "s,wmi-demolb,wmi-haproxy1d64," /etc/wakame-vdc/dcmgr.conf ;;
@@ -69,3 +67,13 @@ case "$(arch)" in
   i686) initctl start vdc-hva-worker ID=1box32 ;;
 x86_64) initctl start vdc-hva-worker ID=1box64 ;;
 esac
+
+### everyboot: a kind of /etc/rc.local
+
+if [ -e /root/everyboot.sh ]; then
+  /root/everyboot.sh
+fi
+
+## finish rc.local
+
+touch /var/lock/subsys/local

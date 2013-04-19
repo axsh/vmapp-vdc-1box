@@ -30,14 +30,12 @@ fstab_type=label
 sudo_requiretty=0
 
 xexecscript="$(pwd)/xexecscript.d/*.sh"
-copy="$(pwd)/copy.txt"
-  for i in guestroot guestroot.${VDC_HYPERVISOR} guestroot.${VDC_EDGE_NETWORKING} guestroot.local; do
-    [[ -d ${i} ]] || continue
-    find ${i} -type f | egrep -v '/.gitkeep$' | while read line; do
-      echo ${line} ${line##${i}}
-    done
-  done > ${copy}
-
+copy="
+ $(pwd)/copy.txt
+ $(pwd)/copy.${VDC_HYPERVISOR}.txt
+ $(pwd)/copy.${VDC_EDGE_NETWORKING}.txt
+ $([[ -f "$(pwd)/copy.local.txt" ]] && echo $(pwd)/copy.local.txt)
+"
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
 
