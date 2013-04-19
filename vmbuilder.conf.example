@@ -29,12 +29,12 @@ fstab_type=label
 
 sudo_requiretty=0
 
-xexecscript="$(pwd)/xexecscript.d/*.sh"
+xexecscript="$(find -L ${BASH_SOURCE[0]%/*}/xexecscript.d ! -type d -name '*.sh' | sort)"
 copy="
- $(pwd)/copy.txt
- $(pwd)/copy.${VDC_HYPERVISOR}.txt
- $(pwd)/copy.${VDC_EDGE_NETWORKING}.txt
- $([[ -f "$(pwd)/copy.local.txt" ]] && echo $(pwd)/copy.local.txt)
+ ${BASH_SOURCE[0]%/*}/copy.txt
+ ${BASH_SOURCE[0]%/*}/copy.${VDC_HYPERVISOR}.txt
+ ${BASH_SOURCE[0]%/*}/copy.${VDC_EDGE_NETWORKING}.txt
+ $([[ -f "${BASH_SOURCE[0]%/*}/copy.local.txt" ]] && echo ${BASH_SOURCE[0]%/*}/copy.local.txt)
 "
 firstboot=  # vmconfig/firstboot.sh
 firstlogin= # vmconfig/firstlogin.sh
