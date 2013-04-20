@@ -1,6 +1,17 @@
-guestroot/etc/rc.d/rc.local /etc/rc.d/rc.local mode=0755
+# .repo file
+
 guestroot/etc/yum.repos.d/wakame-vdc.repo /etc/yum.repos.d/wakame-vdc.repo
-guestroot/var/lib/wakame-vdc/demo/gui-manage.d/00_core /var/lib/wakame-vdc/demo/gui-manage.d/00_core
+
+# rc.local
+
+guestroot/var/lib/wakame-vdc/demo/rc.local /var/lib/wakame-vdc/demo/rc.local mode=0755
+
+# gui-manage
+
+guestroot/var/lib/wakame-vdc/demo/gui-manage.d/00_core    /var/lib/wakame-vdc/demo/gui-manage.d/00_core
 guestroot/var/lib/wakame-vdc/demo/gui-manage.d/10_opetest /var/lib/wakame-vdc/demo/gui-manage.d/10_opetest
-guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/00_core /var/lib/wakame-vdc/demo/vdc-manage.d/00_core
+
+# vdc-manage
+
+guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/00_core    /var/lib/wakame-vdc/demo/vdc-manage.d/00_core
 guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest /var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest
