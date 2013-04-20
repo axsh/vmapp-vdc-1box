@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 #
-# This script will be executed *after* all the other init scripts.
-# You can put your own initialization stuff in here if you don't
-# want to do the full Sys V style init stuff.
+# requires:
+#  bash
+#
 
 ## Wakame-VDC
 
@@ -68,12 +68,11 @@ case "$(arch)" in
 x86_64) initctl start vdc-hva-worker ID=1box64 ;;
 esac
 
-### everyboot: a kind of /etc/rc.local
+### sub rc.locla scripts
 
-if [ -e /root/everyboot.sh ]; then
-  /root/everyboot.sh
+if [[ -d /var/lib/wakame-vdc/demo/rc.local.d ]]; then
+  find /var/lib/wakame-vdc/demo/rc.local.d ! -type d | sort | while read subscript; do
+    [[ -x "${subscript}" ]] || continue
+    ${subscript}
+  done
 fi
-
-## finish rc.local
-
-touch /var/lock/subsys/local

@@ -7,7 +7,6 @@ pre-setup
 ---------
 
 ```
-$ cp -i vmbuilder.conf.example vmbuilder.conf
 $ ./prepare-vmimage.sh
 $ make
 ```
