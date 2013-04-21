@@ -1,0 +1,1 @@
+guestroot/home/centos/.screenrc /home/centos/.screenrc mode=644 owner=centos group=centos
