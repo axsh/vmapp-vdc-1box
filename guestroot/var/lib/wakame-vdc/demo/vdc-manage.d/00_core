@@ -19,8 +19,8 @@ network dc add null2
 network dc add-network-mode null2 l2overlay
 
 network dc add management
-network dc add-network-mode management securitygroup
-network dc del-network-mode management passthrough
+network dc del-network-mode management securitygroup
+network dc add-network-mode management passthrough
 
 network dc add vnet --allow-new-networks true
 network dc add-network-mode vnet l2overlay

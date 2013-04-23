@@ -1,0 +1,29 @@
+## dynamic configuration
+
+case "${arch:-$(arch)}" in
+  i686) arch_type=32 ;;
+x86_64) arch_type=64 ;;
+esac
+
+## dcmgr-api
+
+DCMGR_HOST=${DCMGR_HOST:-10.0.2.15}
+account_id=${account_id:-a-shpoolxx}
+
+## hypervisor
+
+hypervisor=lxc
+#hypervisor=openvz
+#hypervisor=kvm
+
+## vmimage
+
+### std
+
+image_id=wmi-centos1d${arch_type}
+#image_id=wmi-vanilla1d${arch_type}
+#image_id=wmi-haproxy1d${arch_type}
+
+### lbnode
+
+image_id_lbnode=wmi-lbnode1d${arch_type}

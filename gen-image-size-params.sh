@@ -39,9 +39,7 @@ function build_cmdset() {
   esac
 
   cat <<-EOS
-	size=${size}
-	allocation-size=${alloc_size}
-	checksum=${checksum}
+	--size=${size} --allocation-size=${alloc_size} --checksum=${checksum}
 	EOS
 }
 
