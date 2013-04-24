@@ -27,13 +27,13 @@ image features wmi-vanilla1d64 --virtio
 
 ## lbnode1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.kvm.md.raw.tar.gz'  --object-key=lbnode.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=340862694  --checksum=3b83c9f908ab59217d8998aa5779acd7  --container-format=tgz  --description='lbnode.i686.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.kvm.md.raw.tar.gz'  --object-key=lbnode.i686.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=280305418  --checksum=5511a2d6832aae0395ff05f6463a83ea  --container-format=tgz  --description='lbnode.i686.kvm.md.raw.tar.gz'
 image add local bo-lbnode1d32  --account-id a-shpoolxx  --uuid wmi-lbnode1d32  --arch x86  --description 'lbnode.i686.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d32'  --is-cacheable
 image features wmi-lbnode1d32 --virtio
 
 ## lbnode1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.kvm.md.raw.tar.gz'  --object-key=lbnode.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=361561215  --checksum=57c93e5d172cfa08a60c662382e1ef2c  --container-format=tgz  --description='lbnode.x86_64.kvm.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.kvm.md.raw.tar.gz'  --object-key=lbnode.x86_64.kvm.md.raw.tar.gz  --size=1073741824  --allocation-size=315085569  --checksum=0db9ddb99e54dc7a6125935d5bb4bec9  --container-format=tgz  --description='lbnode.x86_64.kvm.md.raw.tar.gz'
 image add local bo-lbnode1d64  --account-id a-shpoolxx  --uuid wmi-lbnode1d64  --arch x86_64  --description 'lbnode.x86_64.kvm.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d64'  --is-cacheable
 image features wmi-lbnode1d64 --virtio
 
