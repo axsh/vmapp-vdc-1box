@@ -16,7 +16,7 @@ function build_cmdset() {
   }
 
   local localname=$(basename ${localpath})
-  local container_format=tgz
+  local container_format=${container_format:-tgz}
 
   local checksum=$(md5sum "${localpath}" | cut -d ' ' -f1 )
   local alloc_size=$(ls -l "${localpath}" | awk '{print $5}')
