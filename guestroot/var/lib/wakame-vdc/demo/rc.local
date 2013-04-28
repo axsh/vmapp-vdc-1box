@@ -36,6 +36,12 @@ mysql -uroot <<'EOS'
   flush privileges;
 EOS
 
+##### 1.8.16 specific
+
+mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/schema/mysql.sql
+mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/data/data.sql
+mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/data/images_mysql.sql
+
 ### add core data
 
 export HOME=/root
