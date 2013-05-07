@@ -4,7 +4,8 @@ storage add sta.demo1 --force --uuid sn-demo1 --base-path /opt/axsh/wakame-vdc/v
 
 # backupstorage
 
-backupstorage add --uuid bkst-demo1 --display-name='local storage' --base-uri='file:///opt/axsh/wakame-vdc/images/' --storage-type=local --description='local backup storage under /opt/axsh/wakame-vdc/images/'
+backupstorage add --uuid bkst-demo1 --display-name='local storage' --base-uri='file:///opt/axsh/wakame-vdc/images/' --storage-type=local --description='local backup storage under /opt/axsh/wakame-vdc/images/' --node-id="bksta.demo1"
+backupstorage add --uuid bkst-demo2 --display-name='webdav storage' --base-uri='http://localhost:8080/images/' --storage-type=webdav --description='nginx based webdav storage' --node-id="bksta.demo2"
 
 # network dc
 
