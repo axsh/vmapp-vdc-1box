@@ -3,48 +3,48 @@
 
 ## centos1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d32  --display-name='centos-6.4.i686.lxc.md.raw.tar.gz'  --object-key=centos-6.4.i686.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=272301080  --checksum=43fe1019e28f127e49738e8dc882925d  --container-format=tgz  --description='centos-6.4.i686.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-centos1d32  --display-name='centos-6.4.i686.lxc.md.raw.tar.gz'  --object-key=centos-6.4.i686.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=272301080  --checksum=43fe1019e28f127e49738e8dc882925d  --container-format=tgz  --description='centos-6.4.i686.lxc.md.raw.tar.gz'
 image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86  --description 'centos-6.4.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
 image features wmi-centos1d32 --virtio
 
 ## centos1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-centos1d64  --display-name='centos-6.4.x86_64.lxc.md.raw.tar.gz'  --object-key=centos-6.4.x86_64.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=273174372  --checksum=cb56b0472103eea3db2edd1db2f99b50  --container-format=tgz  --description='centos-6.4.x86_64.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-centos1d64  --display-name='centos-6.4.x86_64.lxc.md.raw.tar.gz'  --object-key=centos-6.4.x86_64.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=273174372  --checksum=cb56b0472103eea3db2edd1db2f99b50  --container-format=tgz  --description='centos-6.4.x86_64.lxc.md.raw.tar.gz'
 image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.4.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
 image features wmi-centos1d64 --virtio
 
 ## vanilla1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d32  --display-name='vanilla.i686.lxc.md.raw.tar.gz'  --object-key=vanilla.i686.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=272286993  --checksum=37eccef93ef32d1ac05247f0fb5efcb3  --container-format=tgz  --description='vanilla.i686.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-vanilla1d32  --display-name='vanilla.i686.lxc.md.raw.tar.gz'  --object-key=vanilla.i686.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=272286993  --checksum=37eccef93ef32d1ac05247f0fb5efcb3  --container-format=tgz  --description='vanilla.i686.lxc.md.raw.tar.gz'
 image add local bo-vanilla1d32  --account-id a-shpoolxx  --uuid wmi-vanilla1d32  --arch x86  --description 'vanilla.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d32'  --is-cacheable
 image features wmi-vanilla1d32 --virtio
 
 ## vanilla1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-vanilla1d64  --display-name='vanilla.x86_64.lxc.md.raw.tar.gz'  --object-key=vanilla.x86_64.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=273121843  --checksum=0988b74fb3f0b5534619ee0b5d9fb955  --container-format=tgz  --description='vanilla.x86_64.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-vanilla1d64  --display-name='vanilla.x86_64.lxc.md.raw.tar.gz'  --object-key=vanilla.x86_64.lxc.md.raw.tar.gz  --size=4294967296  --allocation-size=273121843  --checksum=0988b74fb3f0b5534619ee0b5d9fb955  --container-format=tgz  --description='vanilla.x86_64.lxc.md.raw.tar.gz'
 image add local bo-vanilla1d64  --account-id a-shpoolxx  --uuid wmi-vanilla1d64  --arch x86_64  --description 'vanilla.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'vanilla1d64'  --is-cacheable
 image features wmi-vanilla1d64 --virtio
 
 ## lbnode1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.lxc.md.raw.tar.gz'  --object-key=lbnode.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=223198476  --checksum=74759491d5676e7da3fb1342df22329c  --container-format=tgz  --description='lbnode.i686.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.lxc.md.raw.tar.gz'  --object-key=lbnode.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=223198476  --checksum=74759491d5676e7da3fb1342df22329c  --container-format=tgz  --description='lbnode.i686.lxc.md.raw.tar.gz'
 image add local bo-lbnode1d32  --account-id a-shpoolxx  --uuid wmi-lbnode1d32  --arch x86  --description 'lbnode.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d32'  --is-cacheable
 image features wmi-lbnode1d32 --virtio
 
 ## lbnode1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.lxc.md.raw.tar.gz'  --object-key=lbnode.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=226029872  --checksum=dfd7abe081ec3de90bc7008f1c2d57e6  --container-format=tgz  --description='lbnode.x86_64.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.lxc.md.raw.tar.gz'  --object-key=lbnode.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=226029872  --checksum=dfd7abe081ec3de90bc7008f1c2d57e6  --container-format=tgz  --description='lbnode.x86_64.lxc.md.raw.tar.gz'
 image add local bo-lbnode1d64  --account-id a-shpoolxx  --uuid wmi-lbnode1d64  --arch x86_64  --description 'lbnode.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d64'  --is-cacheable
 image features wmi-lbnode1d64 --virtio
 
 ## haproxy1d32
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.lxc.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=225945681  --checksum=20cca81431978c4c8760be0b83bfedb0  --container-format=tgz  --description='lb-centos6-stud.i686.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.lxc.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=225945681  --checksum=20cca81431978c4c8760be0b83bfedb0  --container-format=tgz  --description='lb-centos6-stud.i686.lxc.md.raw.tar.gz'
 image add local bo-haproxy1d32  --account-id a-shpoolxx  --uuid wmi-haproxy1d32  --arch x86  --description 'lb-centos6-stud.i686.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d32'  --is-cacheable
 image features wmi-haproxy1d32 --virtio
 
 ## haproxy1d64
 
-backupobject add  --storage-id=bkst-demo2  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.lxc.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=233225879  --checksum=01d6c92393c344a77d1eadce218e6984  --container-format=tgz  --description='lb-centos6-stud.x86_64.lxc.md.raw.tar.gz'
+backupobject add  --storage-id=bkst-demo1  --uuid=bo-haproxy1d64  --display-name='lb-centos6-stud.x86_64.lxc.md.raw.tar.gz'  --object-key=lb-centos6-stud.x86_64.lxc.md.raw.tar.gz  --size=1073741824  --allocation-size=233225879  --checksum=01d6c92393c344a77d1eadce218e6984  --container-format=tgz  --description='lb-centos6-stud.x86_64.lxc.md.raw.tar.gz'
 image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6-stud.x86_64.lxc.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d64'  --is-cacheable
 image features wmi-haproxy1d64 --virtio

@@ -26,7 +26,7 @@ function build_cmdset() {
     return 1
   }
 
-  storage_id=${storage_id:-bkst-demo2}
+  storage_id=${storage_id:-bkst-demo1}
   uuid=${uuid:-centos1d}
   hypervisor=${hypervisor:-openvz}
   uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/vmimage/vanilla.x86_64.${hypervisor}.md.raw.tar.gz
