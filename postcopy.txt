@@ -1,3 +1,9 @@
+## /home/centos/
+
 guestroot/home/centos/.screenrc /home/centos/.screenrc mode=644 owner=centos group=centos
 guestroot/home/centos/.musselrc /home/centos/.musselrc mode=644 owner=centos group=centos
 guestroot/home/centos/vdc.sh    /home/centos/vdc.sh    mode=755 owner=centos group=centos
+
+## bkst-demo2
+
+guestroot/etc/wakame-vdc/proxy.conf /etc/wakame-vdc/proxy.conf
