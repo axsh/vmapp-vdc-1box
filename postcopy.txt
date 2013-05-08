@@ -1,8 +1,8 @@
 ## /home/centos/
 
-guestroot/home/centos/.screenrc /home/centos/.screenrc mode=644 owner=centos group=centos
-guestroot/home/centos/.musselrc /home/centos/.musselrc mode=644 owner=centos group=centos
-guestroot/home/centos/vdc.sh    /home/centos/vdc.sh    mode=755 owner=centos group=centos
+guestroot/home/centos/.screenrc /home/centos/.screenrc mode=644 owner=500 group=500
+guestroot/home/centos/.musselrc /home/centos/.musselrc mode=644 owner=500 group=500
+guestroot/home/centos/vdc.sh    /home/centos/vdc.sh    mode=755 owner=500 group=500
 
 ## bkst-demo2
 
