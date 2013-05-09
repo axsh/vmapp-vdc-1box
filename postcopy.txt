@@ -7,3 +7,8 @@ guestroot/home/centos/vdc.sh    /home/centos/vdc.sh    mode=755 owner=500 group=
 ## bkst-demo2
 
 guestroot/etc/wakame-vdc/proxy.conf /etc/wakame-vdc/proxy.conf
+
+## bkst-demo3
+
+guestroot/etc/httpd/conf/httpd.conf    /etc/httpd/conf/httpd.conf
+guestroot/etc/httpd/conf.d/webdav.conf /etc/httpd/conf.d/webdav.conf
