@@ -47,7 +47,7 @@ function build_box() {
   x86_64) arch_type=64 ;;
   esac
 
-  make ${hypervisor}${arch_type}.${VDC_EDGE_NETWORKING:-netfilter}
+  make ${hypervisor}${arch_type}.${VDC_EDGE_NETWORKING}
 }
 
 function start_box() {
@@ -63,7 +63,7 @@ function start_box() {
    --brname       ${brname}   \
    --monitor-port ${monitor_port} \
    --serial-port  ${serial_port}  \
-   --image-path   ./1box-${hypervisor}.netfilter.$(arch).raw
+   --image-path   ./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw
 }
 
 function stop_box() {
@@ -79,7 +79,7 @@ function dist_raw_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
+  local image_path=./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw
   time tar zScvpf ${image_path}.$(date +%Y%m%d).tar.gz ${image_path}
 }
 
@@ -88,7 +88,7 @@ function dist_vdi_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  local image_path=./1box-${hypervisor}.netfilter.$(arch).vdi
+  local image_path=./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).vdi
   time zip ${image_path}.$(date +%Y%m%d).zip ${image_path}
 }
 
@@ -97,7 +97,7 @@ function dist_vmdk_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  local image_path=./1box-${hypervisor}.netfilter.$(arch).vmdk
+  local image_path=./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).vmdk
   time zip ${image_path}.$(date +%Y%m%d).zip ${image_path}
 }
 
@@ -106,7 +106,7 @@ function raw2vdi_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
+  local image_path=./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw
   time ./vmbuilder/kvm/rhel/6/misc/raw2vdi.sh ${image_path}
 }
 
@@ -115,7 +115,7 @@ function raw2vmdk_box() {
   [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
   valid_hypervisor? ${hypervisor} || return 1
 
-  local image_path=./1box-${hypervisor}.netfilter.$(arch).raw
+  local image_path=./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw
   time ./vmbuilder/kvm/rhel/6/misc/raw2vmdk.sh ${image_path}
 }
 
@@ -135,6 +135,8 @@ vif_num=${vif_num:-2}
 mem_size=${mem_size:-2048}
 cpu_num=${cpu_num:-4}
 brname=${brname:-vboxbr0}
+
+VDC_EDGE_NETWORKING=${VDC_EDGE_NETWORKING:-netfilter}
 
 ## validate
 
