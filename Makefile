@@ -42,7 +42,7 @@ kvm32.openflow:
 
 openvz: openvz64 openvz32
 
-openvz64: openvz64.netfilter openvz64openflow
+openvz64: openvz64.netfilter openvz64.openflow
 openvz64.netfilter:
 	time sudo VDC_HYPERVISOR=openvz VDC_EDGE_NETWORKING=netfilter setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 openvz64.openflow:
