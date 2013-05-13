@@ -121,11 +121,6 @@ function raw2vmdk_box() {
 
 ## variables
 
-### this script
-
-declare cmd=${1:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
-declare hypervisor=${2:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
-
 ### kvm-ctl.sh
 
 [[ -f ${BASH_SOURCE[0]%/*}/vmbuilder.conf ]] && . ${BASH_SOURCE[0]%/*}/vmbuilder.conf
@@ -137,6 +132,11 @@ vif_num=${vif_num:-2}
 mem_size=${mem_size:-2048}
 cpu_num=${cpu_num:-4}
 brname=${brname:-vboxbr0}
+
+### this script
+
+declare cmd=${1:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
+declare hypervisor=${2:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})"}
 
 VDC_EDGE_NETWORKING=${VDC_EDGE_NETWORKING:-netfilter}
 
