@@ -128,6 +128,8 @@ declare hypervisor=${2:?"[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINE
 
 ### kvm-ctl.sh
 
+[[ -f ${BASH_SOURCE[0]%/*}/vmbuilder.conf ]] && . ${BASH_SOURCE[0]%/*}/vmbuilder.conf
+
 monitor_port=${monitor_port:-4444}
 vnc_port=${vnc_port:-1002}
 serial_port=${serial_port:-5555}
