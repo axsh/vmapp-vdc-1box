@@ -1,0 +1,10 @@
+guestroot.dummy/var/lib/wakame-vdc/demo/vdc-manage.d/01_core /var/lib/wakame-vdc/demo/vdc-manage.d/01_core
+guestroot.dummy/var/lib/wakame-vdc/demo/vdc-manage.d/02_core /var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+guestroot.dummy/var/lib/wakame-vdc/images/centos-6.4.i686.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.4.i686.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/centos-6.4.x86_64.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.4.x86_64.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/lb-centos6-stud.i686.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/lb-centos6-stud.i686.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/lb-centos6-stud.x86_64.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/lb-centos6-stud.x86_64.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/lbnode.i686.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/lbnode.i686.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/lbnode.x86_64.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/lbnode.x86_64.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/vanilla.i686.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/vanilla.i686.dummy.md.raw.tar.gz
+guestroot.dummy/var/lib/wakame-vdc/images/vanilla.x86_64.dummy.md.raw.tar.gz /var/lib/wakame-vdc/images/vanilla.x86_64.dummy.md.raw.tar.gz

@@ -25,7 +25,7 @@ function valid_hypervisor?() {
   local hypervisor=$1
 
   case "${hypervisor}" in
-  lxc|openvz|kvm)
+  lxc|openvz|kvm|dummy)
     ;;
   *)
    echo "[ERROR] unknown hypervisor: ${hypervisor} (${BASH_SOURCE[0]##*/}:${LINENO})" >&2
