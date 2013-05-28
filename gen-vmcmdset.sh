@@ -126,6 +126,6 @@ function generate_cmdset() {
   } | tee ${filepath}
 }
 
-for hypervisor in kvm lxc openvz; do
+for hypervisor in kvm lxc openvz dummy; do
   generate_cmdset ${hypervisor}
 done
