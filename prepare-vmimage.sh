@@ -29,11 +29,15 @@ function deploy_vmimage() {
   }
 }
 
-for arch in x86_64 i686; do
-  for hypervisor in kvm lxc openvz; do
-    for vmimage in centos-6.4 vanilla lb-centos6-stud lbnode; do
-      echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
-      time deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
+function deploy_vmimage_matrix() {
+  for arch in x86_64 i686; do
+    for hypervisor in kvm lxc openvz; do
+      for vmimage in centos-6.4 vanilla lb-centos6-stud lbnode; do
+        echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
+        time deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
+      done
     done
   done
-done
+}
+
+deploy_vmimage_matrix
