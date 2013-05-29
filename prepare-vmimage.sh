@@ -29,6 +29,40 @@ function deploy_vmimage() {
   }
 }
 
+function validate_arch() {
+  local arch=$1
+
+  case "${arch}" in
+  x86_64) ;;
+    i686) ;;
+       *) return 1 ;;
+  esac
+}
+
+function validate_hypervisor() {
+  local hypervisor=$1
+
+  case "${hypervisor}" in
+     kvm) ;;
+     lxc) ;;
+  openvz) ;;
+   dummy) return 1 ;; # no need to download vmimages
+       *) return 1 ;; # unknown
+  esac
+}
+
+function validate_vmimage() {
+  local vmimage=$1
+
+  case "${vmimage}" in
+       centos-6.4) ;;
+          vanilla) ;;
+  lb-centos6-stud) ;;
+           lbnode) ;;
+                *) return 1 ;; # unknown
+  esac
+}
+
 function deploy_vmimage_matrix() {
   local hypervisors="${1:-"kvm lxc openvz"}"
   local archs="${2:-"x86_64 i686"}"
@@ -37,13 +71,23 @@ function deploy_vmimage_matrix() {
   local arch hypervisor vmimage
 
   for arch in ${archs}; do
+    validate_arch ${arch} || continue
+
     for hypervisor in ${hypervisors}; do
+      validate_hypervisor ${hypervisor} || continue
+
       for vmimage in ${vmimages}; do
+        validate_vmimage ${vmimage}
+
         echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
         time deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
       done
     done
   done
 }
+
+# $1: hypervisor
+# $2: arch
+# $3: vmimage
 
 deploy_vmimage_matrix $@
