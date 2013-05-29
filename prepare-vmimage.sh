@@ -34,6 +34,8 @@ function deploy_vmimage_matrix() {
   local archs="${2:-"x86_64 i686"}"
   local vmimages="${3:-"centos-6.4 vanilla lb-centos6-stud lbnode"}"
 
+  local arch hypervisor vmimage
+
   for arch in ${archs}; do
     for hypervisor in ${hypervisors}; do
       for vmimage in ${vmimages}; do
