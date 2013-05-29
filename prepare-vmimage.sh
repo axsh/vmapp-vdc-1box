@@ -30,8 +30,8 @@ function deploy_vmimage() {
 }
 
 function deploy_vmimage_matrix() {
-  local archs="x86_64 i686"
   local hypervisors="kvm lxc openvz"
+  local archs="x86_64 i686"
 
   for arch in ${archs}; do
     for hypervisor in kvm lxc openvz; do
