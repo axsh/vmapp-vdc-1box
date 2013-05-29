@@ -30,7 +30,10 @@ function deploy_vmimage() {
 }
 
 function deploy_vmimage_matrix() {
-  for arch in x86_64 i686; do
+  local archs="x86_64 i686"
+  local hypervisors="kvm lxc openvz"
+
+  for arch in ${archs}; do
     for hypervisor in kvm lxc openvz; do
       for vmimage in centos-6.4 vanilla lb-centos6-stud lbnode; do
         echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
