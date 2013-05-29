@@ -30,12 +30,13 @@ function deploy_vmimage() {
 }
 
 function deploy_vmimage_matrix() {
-  local hypervisors="kvm lxc openvz"
-  local archs="x86_64 i686"
+  local hypervisors="${1:-"kvm lxc openvz"}"
+  local archs="${2:-"x86_64 i686"}"
+  local vmimages="${3:-"centos-6.4 vanilla lb-centos6-stud lbnode"}"
 
   for arch in ${archs}; do
     for hypervisor in ${hypervisors}; do
-      for vmimage in centos-6.4 vanilla lb-centos6-stud lbnode; do
+      for vmimage in ${vmimages}; do
         echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
         time deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
       done
@@ -43,4 +44,4 @@ function deploy_vmimage_matrix() {
   done
 }
 
-deploy_vmimage_matrix
+deploy_vmimage_matrix $@
