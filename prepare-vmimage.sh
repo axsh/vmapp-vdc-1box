@@ -90,4 +90,4 @@ function deploy_vmimage_matrix() {
 # $2: arch
 # $3: vmimage
 
-deploy_vmimage_matrix $@
+deploy_vmimage_matrix "$@"
