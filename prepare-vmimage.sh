@@ -11,16 +11,17 @@ set -e
 readonly abs_dirname=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)
 
 function deploy_vmimage() {
-  local vmimage_basename=$1 hypervisor=$2 multi_suffix=$3
-  [[ -n "${vmimage_basename}" ]] || { echo "[ERROR] invalid argument: 'vmimage_basename'" >&2; return 1; }
-  [[ -n "${hypervisor}"       ]] || { echo "[ERROR] invalid argument: 'hypervisor'" >&2; return 1; }
-  [[ -n "${multi_suffix}"     ]] || { echo "[ERROR] invalid argument: 'multi_suffix'" >&2; return 1; }
+  local vmimage=$1 arch=$2 hypervisor=$3 multi_suffix=$4
+  [[ -n "${vmimage}"      ]] || { echo "[ERROR] invalid argument: 'vmimage_'" >&2; return 1; }
+  [[ -n "${arch}"         ]] || { echo "[ERROR] invalid argument: 'arch'" >&2; return 1; }
+  [[ -n "${hypervisor}"   ]] || { echo "[ERROR] invalid argument: 'hypervisor'" >&2; return 1; }
+  [[ -n "${multi_suffix}" ]] || { echo "[ERROR] invalid argument: 'multi_suffix'" >&2; return 1; }
 
   local vmimage_base_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/1box/vmimage
   local vmimage_base_path=${abs_dirname}/guestroot.${hypervisor}/var/lib/wakame-vdc/images
 
-  local vmimage_uri=${vmimage_base_uri}/${vmimage_basename}.${hypervisor}.${multi_suffix}
-  local vmimage_path=${vmimage_base_path}/${vmimage_basename}.${hypervisor}.${multi_suffix}
+  local vmimage_uri=${vmimage_base_uri}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
+  local vmimage_path=${vmimage_base_path}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
 
   [[ -d ${vmimage_base_path} ]] || mkdir -p ${vmimage_base_path}
 
@@ -79,8 +80,8 @@ function deploy_vmimage_matrix() {
       for vmimage in ${vmimages}; do
         validate_vmimage ${vmimage}
 
-        echo ... ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
-        time deploy_vmimage ${vmimage}.${arch} ${hypervisor} md.raw.tar.gz
+        echo ... ${vmimage} ${arch} ${hypervisor} md.raw.tar.gz
+        time deploy_vmimage ${vmimage} ${arch} ${hypervisor} md.raw.tar.gz
       done
     done
   done
