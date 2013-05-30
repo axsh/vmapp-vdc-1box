@@ -18,15 +18,16 @@ function deploy_vmimage() {
   [[ -n "${multi_suffix}" ]] || { echo "[ERROR] invalid argument: 'multi_suffix'" >&2; return 1; }
 
   local vmimage_base_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/1box/vmimage
-  local vmimage_base_path=${abs_dirname}/guestroot.${hypervisor}/var/lib/wakame-vdc/images
+  local vmimage_base_path=${abs_dirname}/guestroot.${hypervisor}.${arch}/var/lib/wakame-vdc/images
 
   local vmimage_uri=${vmimage_base_uri}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
   local vmimage_path=${vmimage_base_path}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
 
   [[ -d ${vmimage_base_path} ]] || mkdir -p ${vmimage_base_path}
 
+  echo "===> ${vmimage_path}"
   [[ -f "${vmimage_path}" ]] || {
-    curl -fsSkL -o ${vmimage_path} -R ${vmimage_uri}
+    curl -fkL -o ${vmimage_path} -R ${vmimage_uri}
   }
 }
 
