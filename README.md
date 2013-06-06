@@ -30,3 +30,4 @@ hypervisor:
 + lxc
 + openvz
 + kvm
++ dummy
