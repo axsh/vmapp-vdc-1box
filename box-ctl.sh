@@ -60,6 +60,7 @@ function start_box() {
    --vif-num      ${vif_num}  \
    --mem-size     ${mem_size} \
    --cpu-num      ${cpu_num}  \
+   --cpu-type     ${cpu_type} \
    --brname       ${brname}   \
    --monitor-port ${monitor_port} \
    --serial-port  ${serial_port}  \
@@ -133,6 +134,7 @@ serial_port=${serial_port:-5555}
 vif_num=${vif_num:-2}
 mem_size=${mem_size:-2048}
 cpu_num=${cpu_num:-4}
+cpu_type=${cpu_type:-host}
 brname=${brname:-vboxbr0}
 drive_type=${drive_type:-virtio} # [ virtio, ide ]
 nic_driver=${nic_driver:-virtio-net-pci} # [ virtio-net-pci, e1000 ]
