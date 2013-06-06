@@ -63,6 +63,8 @@ function start_box() {
    --brname       ${brname}   \
    --monitor-port ${monitor_port} \
    --serial-port  ${serial_port}  \
+   --drive-type   ${drive_type} \
+   --nic-driver   ${nic_driver} \
    --image-path   ./1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw
 }
 
@@ -132,6 +134,8 @@ vif_num=${vif_num:-2}
 mem_size=${mem_size:-2048}
 cpu_num=${cpu_num:-4}
 brname=${brname:-vboxbr0}
+drive_type=${drive_type:-virtio} # [ virtio, ide ]
+nic_driver=${nic_driver:-virtio-net-pci} # [ virtio-net-pci, e1000 ]
 
 ### this script
 
