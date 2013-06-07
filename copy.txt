@@ -15,7 +15,3 @@ guestroot/var/lib/wakame-vdc/demo/gui-manage.d/10_opetest /var/lib/wakame-vdc/de
 
 guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/00_core    /var/lib/wakame-vdc/demo/vdc-manage.d/00_core
 guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest /var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest
-
-# vdc-admin
-
-guestroot/etc/wakame-vdc/admin/admin.yml /etc/wakame-vdc/admin/admin.yml

@@ -12,3 +12,7 @@ guestroot/etc/wakame-vdc/proxy.conf /etc/wakame-vdc/proxy.conf
 
 guestroot/etc/httpd/conf/httpd.conf    /etc/httpd/conf/httpd.conf
 guestroot/etc/httpd/conf.d/webdav.conf /etc/httpd/conf.d/webdav.conf
+
+## vdc-admin
+
+guestroot/etc/wakame-vdc/admin/admin.yml /etc/wakame-vdc/admin/admin.yml
