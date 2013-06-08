@@ -31,3 +31,9 @@ hypervisor:
 + openvz
 + kvm
 + dummy
+
+custom configuration
+--------------------
+
++ copy.local.txt
++ postcopy.local.txt
