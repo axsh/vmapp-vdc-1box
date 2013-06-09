@@ -37,3 +37,6 @@ custom configuration
 
 + copy.local.txt
 + postcopy.local.txt
+
++ copy.local.$(arch).txt
++ postcopy.local.$(arch).txt
