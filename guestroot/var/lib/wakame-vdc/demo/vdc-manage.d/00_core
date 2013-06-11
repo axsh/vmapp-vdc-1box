@@ -60,7 +60,7 @@ network service dns  nw-demo7 --ipv4=10.103.0.2
 
 # network dhcp ip address range
 
-network dhcp addrange nw-demo1   10.0.2.100   10.0.2.255
+network dhcp addrange nw-demo1   10.0.2.100   10.0.2.254
 network dhcp addrange nw-demo2   10.100.0.61  10.100.0.65
 network dhcp addrange nw-demo2   10.100.0.70  10.100.0.75
 network dhcp addrange nw-demo2   10.100.0.68  10.100.0.75
