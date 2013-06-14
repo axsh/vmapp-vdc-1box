@@ -45,10 +45,6 @@ function base_image_file() {
 }
 
 function build_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local arch_type
   case "$(arch)" in
     i686) arch_type=32 ;;
@@ -59,10 +55,6 @@ function build_box() {
 }
 
 function start_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   sudo ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh start \
    --vnc-port     ${vnc_port} \
    --vif-num      ${vif_num}  \
@@ -78,54 +70,30 @@ function start_box() {
 }
 
 function stop_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   echo quit | nc localhost ${monitor_port}
 }
 
 function dist_raw_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local image_path=$(base_image_file).raw
   time tar zScvpf ${image_path}.$(today).tar.gz ${image_path}
 }
 
 function dist_vdi_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local image_path=$(base_image_file).vdi
   time zip ${image_path}.$(today).zip ${image_path}
 }
 
 function dist_vmdk_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local image_path=$(base_image_file).vmdk
   time zip ${image_path}.$(today).zip ${image_path}
 }
 
 function raw2vdi_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local image_path=$(base_image_file).raw
   time ./vmbuilder/kvm/rhel/6/misc/raw2vdi.sh ${image_path}
 }
 
 function raw2vmdk_box() {
-  local hypervisor=$1
-  [[ -n "${hypervisor}" ]] || { echo "[ERROR] invalid parameter (${BASH_SOURCE[0]##*/}:${LINENO})" >&2; return 1; }
-  valid_hypervisor? ${hypervisor} || return 1
-
   local image_path=$(base_image_file).raw
   time ./vmbuilder/kvm/rhel/6/misc/raw2vmdk.sh ${image_path}
 }
