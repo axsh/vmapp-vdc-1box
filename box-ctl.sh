@@ -13,7 +13,7 @@ function valid_cmd?() {
   local cmd=$1
 
   case "${cmd}" in
-  build|start|stop|raw2vdi|raw2vmdk|dist_raw|dist_vdi|dist_vmdk)
+  build|start|stop|raw2vdi|raw2vmdk|dist_raw|dist_vdi|dist_vmdk|release_raw|release_vdi|release_vmdk)
     ;;
   *)
     echo "[ERROR] unknown cmd: ${cmd} (${BASH_SOURCE[0]##*/}:${LINENO})" >&2
@@ -73,29 +73,54 @@ function stop_box() {
   echo quit | nc localhost ${monitor_port}
 }
 
+function release_base_box() {
+  local format=$1
+
+  build_box
+  raw2${format}_box
+  dist_${format}_box
+}
+
+function release_raw_box() {
+  release_base_box raw
+}
+
+function release_vdi_box() {
+  release_base_box vdi
+}
+
+function release_vmdk_box() {
+  release_base_box vmdk
+}
+
 function dist_raw_box() {
-  local image_path=$(base_image_file).raw
-  time tar zScvpf ${image_path}.$(today).tar.gz ${image_path}
+  time tar zScvpf $(base_image_file).raw.$(today).tar.gz $(base_image_file).raw
 }
 
 function dist_vdi_box() {
-  local image_path=$(base_image_file).vdi
-  time zip ${image_path}.$(today).zip ${image_path}
+  local format=vdi
+  time zip $(base_image_file).${format}.$(today).zip $(base_image_file).${format}
 }
 
 function dist_vmdk_box() {
-  local image_path=$(base_image_file).vmdk
-  time zip ${image_path}.$(today).zip ${image_path}
+  local format=vmdk
+  time zip $(base_image_file).${format}.$(today).zip $(base_image_file).${format}
+}
+
+function raw2raw_box() {
+  :
 }
 
 function raw2vdi_box() {
-  local image_path=$(base_image_file).raw
-  time ./vmbuilder/kvm/rhel/6/misc/raw2vdi.sh ${image_path}
+  local format=vdi
+  [[ -f "$(base_image_file).${format}" ]] && rm -f $(base_image_file).${format}
+  time ./vmbuilder/kvm/rhel/6/misc/raw2${format}.sh $(base_image_file).raw
 }
 
 function raw2vmdk_box() {
-  local image_path=$(base_image_file).raw
-  time ./vmbuilder/kvm/rhel/6/misc/raw2vmdk.sh ${image_path}
+  local format=vmdk
+  [[ -f "$(base_image_file).${format}" ]] && rm -f $(base_image_file).${format}
+  time ./vmbuilder/kvm/rhel/6/misc/raw2${format}.sh $(base_image_file).raw
 }
 
 ## variables
