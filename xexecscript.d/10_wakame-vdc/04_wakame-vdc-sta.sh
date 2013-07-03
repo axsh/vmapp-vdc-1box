@@ -11,4 +11,8 @@ echo "doing execscript.sh: $1"
 chroot $1 $SHELL <<EOS
   yum install -y wakame-vdc-sta-vmapp-config
   yum install -y wakame-vdc-example-1box-sta-vmapp-config
+
+  chkconfig --list tgtd
+  chkconfig        tgtd on
+  chkconfig --list tgtd
 EOS
