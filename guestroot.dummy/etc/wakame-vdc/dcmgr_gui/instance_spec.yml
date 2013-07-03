@@ -1,0 +1,15 @@
+dummy.small:
+  cpu_cores: 1
+  memory_size: 256
+  hypervisor: 'dummy'
+  quota_weight: 1.0
+dummy.large:
+  cpu_cores: 2
+  memory_size: 256
+  hypervisor: 'dummy'
+  quota_weight: 2.0
+dummy.xlarge:
+  cpu_cores: 2
+  memory_size: 1536
+  hypervisor: 'dummy'
+  quota_weight: 2.0
