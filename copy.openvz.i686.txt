@@ -1,4 +1,3 @@
-guestroot.openvz.i686/etc/yum.repos.d/openvz.repo /etc/yum.repos.d/openvz.repo
 guestroot.openvz.i686/var/lib/wakame-vdc/demo/vdc-manage.d/01_core.i686 /var/lib/wakame-vdc/demo/vdc-manage.d/01_core.i686
 guestroot.openvz.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core.i686 /var/lib/wakame-vdc/demo/vdc-manage.d/02_core.i686
 guestroot.openvz.i686/var/lib/wakame-vdc/images/centos-6.4.i686.openvz.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.4.i686.openvz.md.raw.tar.gz

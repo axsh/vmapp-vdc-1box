@@ -1,0 +1,1 @@
+guestroot.kvm/etc/wakame-vdc/dcmgr_gui/instance_spec.yml /etc/wakame-vdc/dcmgr_gui/instance_spec.yml

@@ -1,0 +1,2 @@
+guestroot.openvz/etc/yum.repos.d/openvz.repo /etc/yum.repos.d/openvz.repo
+guestroot.openvz/etc/wakame-vdc/dcmgr_gui/instance_spec.yml /etc/wakame-vdc/dcmgr_gui/instance_spec.yml
