@@ -24,3 +24,4 @@ guestroot/etc/default/vdc-sta /etc/default/vdc-sta
 # vdc-dolphin
 
 guestroot/etc/wakame-vdc/dolphin.conf /etc/wakame-vdc/dolphin.conf
+guestroot/var/lib/wakame-vdc/demo/dolphin.sql /var/lib/wakame-vdc/demo/dolphin.sql
