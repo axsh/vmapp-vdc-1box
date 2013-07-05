@@ -31,7 +31,8 @@ done
 
 ##### dolphin
 
-mysql -uroot dolphin < /var/lib/wakame-vdc/demo/dolphin.sql
+# mysql -uroot dolphin < /var/lib/wakame-vdc/demo/dolphin.sql
+cassandra-cli -h 127.0.0.1 < /var/lib/wakame-vdc/demo/cassandra_schema.txt
 
 #### zabbix
 

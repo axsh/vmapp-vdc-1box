@@ -16,3 +16,14 @@ guestroot/etc/httpd/conf.d/webdav.conf /etc/httpd/conf.d/webdav.conf
 ## vdc-admin
 
 guestroot/etc/wakame-vdc/admin/admin.yml /etc/wakame-vdc/admin/admin.yml
+
+## td-agent/dolphin
+
+guestroot/var/log/wakame-vdc/bksta.log.pos     /var/log/wakame-vdc/bksta.log.pos     owner=496 group=496
+guestroot/var/log/wakame-vdc/collector.log.pos /var/log/wakame-vdc/collector.log.pos owner=496 group=496
+guestroot/var/log/wakame-vdc/dcmgr.log.pos     /var/log/wakame-vdc/dcmgr.log.pos     owner=496 group=496
+guestroot/var/log/wakame-vdc/dolphin.log.pos   /var/log/wakame-vdc/dolphin.log.pos   owner=496 group=496
+guestroot/var/log/wakame-vdc/hva.log.pos       /var/log/wakame-vdc/hva.log.pos       owner=496 group=496
+guestroot/var/log/wakame-vdc/natbox.log.pos    /var/log/wakame-vdc/natbox.log.pos    owner=496 group=496
+guestroot/var/log/wakame-vdc/nwmongw.log.pos   /var/log/wakame-vdc/nwmongw.log.pos   owner=496 group=496
+guestroot/var/log/wakame-vdc/sta.log.pos       /var/log/wakame-vdc/sta.log.pos       owner=496 group=496
