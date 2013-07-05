@@ -29,3 +29,7 @@ guestroot/var/lib/wakame-vdc/demo/cassandra_schema.txt /var/lib/wakame-vdc/demo/
 
 guestroot/etc/td-agent/td-agent.conf                      /etc/td-agent/td-agent.conf
 guestroot/etc/td-agent/plugin/out_wakame_vdc_log_store.rb /etc/td-agent/plugin/out_wakame_vdc_log_store.rb
+
+# vdc-nwmongw
+
+guestroot/etc/wakame-vdc/nwmongw.conf /etc/wakame-vdc/nwmongw.conf
