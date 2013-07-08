@@ -17,7 +17,7 @@ initctl stop vdc-collector
 
 ### initialize database
 
-for dbname in wakame_dcmgr wakame_dcmgr_gui zabbix; do
+for dbname in wakame_dcmgr wakame_dcmgr_gui zabbix dolphin; do
   yes | mysqladmin -uroot drop ${dbname} || :
   mysqladmin -uroot create ${dbname} --default-character-set=utf8
 done
@@ -28,6 +28,11 @@ for dirpath in /opt/axsh/wakame-vdc/dcmgr /opt/axsh/wakame-vdc/frontend/dcmgr_gu
   cd ${dirpath}
   /opt/axsh/wakame-vdc/ruby/bin/bundle exec rake db:init --trace
 done
+
+##### dolphin
+
+# mysql -uroot dolphin < /var/lib/wakame-vdc/demo/dolphin.sql
+cassandra-cli -h 127.0.0.1 < /var/lib/wakame-vdc/demo/cassandra_schema.txt
 
 #### zabbix
 

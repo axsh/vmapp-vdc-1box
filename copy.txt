@@ -1,6 +1,7 @@
 # .repo file
 
 guestroot/etc/yum.repos.d/wakame-vdc.repo /etc/yum.repos.d/wakame-vdc.repo
+guestroot/etc/yum.repos.d/td.repo         /etc/yum.repos.d/td.repo
 
 # rc.local
 
@@ -16,6 +17,19 @@ guestroot/var/lib/wakame-vdc/demo/gui-manage.d/10_opetest /var/lib/wakame-vdc/de
 guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/00_core    /var/lib/wakame-vdc/demo/vdc-manage.d/00_core
 guestroot/var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest /var/lib/wakame-vdc/demo/vdc-manage.d/10_opetest
 
-# sta
+# vdc-sta
 
 guestroot/etc/default/vdc-sta /etc/default/vdc-sta
+
+# vdc-dolphin
+
+guestroot/etc/wakame-vdc/dolphin.conf                  /etc/wakame-vdc/dolphin.conf
+guestroot/var/lib/wakame-vdc/demo/dolphin.sql          /var/lib/wakame-vdc/demo/dolphin.sql
+guestroot/var/lib/wakame-vdc/demo/cassandra_schema.txt /var/lib/wakame-vdc/demo/cassandra_schema.txt
+
+guestroot/etc/td-agent/td-agent.conf                      /etc/td-agent/td-agent.conf
+guestroot/etc/td-agent/plugin/out_wakame_vdc_log_store.rb /etc/td-agent/plugin/out_wakame_vdc_log_store.rb
+
+# vdc-nwmongw
+
+guestroot/etc/wakame-vdc/nwmongw.conf /etc/wakame-vdc/nwmongw.conf

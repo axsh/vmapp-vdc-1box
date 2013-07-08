@@ -19,7 +19,7 @@ function screen_it {
 
 screen -L -d -m -S ${SCREEN_NAME} -t vdc -c ~/.screenrc
 
-for component in collector dcmgr hva sta; do
+for component in collector dcmgr hva sta dolphin nwmongw; do
   screen_it ${component} "tail -F ${VDC_LOG_PATH}/${component}.log"
 done
 
