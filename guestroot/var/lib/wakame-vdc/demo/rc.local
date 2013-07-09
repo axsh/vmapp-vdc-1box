@@ -11,9 +11,12 @@
 initctl stop vdc-hva
 initctl stop vdc-collector
 
-### remove default vdc-hva system job config file
+### replace hva node-id with 1boxXX
 
-[[ -f /etc/init/vdc-hva.conf ]] && rm -f /etc/init/vdc-hva.conf
+case "$(arch)" in
+  i686) sed -i -e "s,^#NODE_ID=.*,NODE_ID=1box32," /etc/default/vdc-hva ;;
+x86_64) sed -i -e "s,^#NODE_ID=.*,NODE_ID=1box64," /etc/default/vdc-hva ;;
+esac
 
 ### initialize database
 
@@ -73,11 +76,6 @@ sed -i -e "s,bkst-demo2,bkst-demo3," /etc/wakame-vdc/dcmgr.conf
 ### start services
 
 initctl start vdc-collector
-
-case "$(arch)" in
-  i686) initctl start vdc-hva-worker ID=1box32 ;;
-x86_64) initctl start vdc-hva-worker ID=1box64 ;;
-esac
 
 ### sub rc.locla scripts
 
