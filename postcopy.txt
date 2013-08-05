@@ -16,6 +16,10 @@ guestroot/etc/httpd/conf.d/webdav.conf /etc/httpd/conf.d/webdav.conf
 
 guestroot/etc/wakame-vdc/admin/admin.yml /etc/wakame-vdc/admin/admin.yml
 
+## zabbix
+
+guestroot/etc/zabbix/zabbix.conf.php /etc/zabbix/zabbix.conf.php mode=600 owner=48 group=48
+
 ## td-agent/dolphin
 
 guestroot/var/log/wakame-vdc/bksta.log.pos     /var/log/wakame-vdc/bksta.log.pos     owner=496 group=496
