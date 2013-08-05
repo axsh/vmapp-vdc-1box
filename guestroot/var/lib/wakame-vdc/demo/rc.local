@@ -9,8 +9,8 @@ set -e
 
 ### stop services
 
-initctl stop vdc-hva
-initctl stop vdc-collector
+initctl stop vdc-hva       || :
+initctl stop vdc-collector || :
 
 ### replace hva node-id with 1boxXX
 
