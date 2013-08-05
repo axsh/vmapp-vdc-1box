@@ -27,7 +27,7 @@ function deploy_vmimage() {
 
   echo "===> ${vmimage_path}"
   [[ -f "${vmimage_path}" ]] || {
-    curl -fkL -o ${vmimage_path} -R ${vmimage_uri}
+    curl -fSkL --retry 3 -o ${vmimage_path} -R ${vmimage_uri}
   }
 }
 
