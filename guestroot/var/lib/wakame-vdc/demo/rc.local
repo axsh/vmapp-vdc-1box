@@ -3,6 +3,7 @@
 # requires:
 #  bash
 #
+set -e
 
 ## Wakame-VDC
 
