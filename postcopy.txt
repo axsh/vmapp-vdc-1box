@@ -10,7 +10,6 @@ guestroot/etc/wakame-vdc/proxy.conf /etc/wakame-vdc/proxy.conf
 
 ## bkst-demo3
 
-guestroot/etc/httpd/conf/httpd.conf    /etc/httpd/conf/httpd.conf
 guestroot/etc/httpd/conf.d/webdav.conf /etc/httpd/conf.d/webdav.conf
 
 ## vdc-admin
