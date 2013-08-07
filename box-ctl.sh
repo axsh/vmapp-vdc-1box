@@ -36,8 +36,8 @@ function valid_hypervisor?() {
 
 ### box
 
-function today() {
-  date +%Y%m%d
+function release_id() {
+  cat VDC-VERSION.txt
 }
 
 function base_image_file() {
@@ -94,17 +94,17 @@ function release_vmdk_box() {
 }
 
 function dist_raw_box() {
-  time tar zScvpf $(base_image_file).raw.$(today).tar.gz $(base_image_file).raw
+  time tar zScvpf $(base_image_file).raw.$(release_id).tar.gz $(base_image_file).raw
 }
 
 function dist_vdi_box() {
   local format=vdi
-  time zip $(base_image_file).${format}.$(today).zip $(base_image_file).${format}
+  time zip $(base_image_file).${format}.$(release_id).zip $(base_image_file).${format}
 }
 
 function dist_vmdk_box() {
   local format=vmdk
-  time zip $(base_image_file).${format}.$(today).zip $(base_image_file).${format}
+  time zip $(base_image_file).${format}.$(release_id).zip $(base_image_file).${format}
 }
 
 function raw2raw_box() {
