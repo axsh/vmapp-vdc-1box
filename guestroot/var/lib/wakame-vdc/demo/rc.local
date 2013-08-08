@@ -12,6 +12,12 @@ set -e
 initctl stop vdc-hva       || :
 initctl stop vdc-collector || :
 
+/etc/init.d/zabbix-server stop || :
+/etc/init.d/zabbix-agent  stop || :
+/etc/init.d/httpd         stop || :
+
+sleep 10
+
 ### replace hva node-id with 1boxXX
 
 case "$(arch)" in
@@ -77,6 +83,10 @@ sed -i -e "s,bkst-demo2,bkst-demo3," /etc/wakame-vdc/dcmgr.conf
 ### start services
 
 initctl start vdc-collector
+
+/etc/init.d/zabbix-server start
+/etc/init.d/zabbix-agent  start
+/etc/init.d/httpd         start
 
 ### sub rc.locla scripts
 
