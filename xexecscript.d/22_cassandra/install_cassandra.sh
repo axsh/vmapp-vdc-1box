@@ -32,7 +32,7 @@ function presetup_jre6() {
     ;;
   esac
 
-  run_in_target ${chroot_dir} curl -L \"${jre6_location}\" -o ${jre6_path}
+  run_in_target ${chroot_dir} curl -fSkL --retry 3 \"${jre6_location}\" -o ${jre6_path}
 }
 
 function prepare_jre6() {
