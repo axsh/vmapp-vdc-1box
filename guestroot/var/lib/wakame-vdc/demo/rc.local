@@ -4,6 +4,9 @@
 #  bash
 #
 set -e
+set -x
+
+exec > >(tee /var/log/vdc-firstboot.log) 2>&1
 
 ## Wakame-VDC
 
