@@ -52,6 +52,7 @@ function build_box() {
   esac
 
   make ${hypervisor}${arch_type}.${VDC_EDGE_NETWORKING}
+  sudo $SHELL -c "chown -R \${SUDO_UID}:\${SUDO_GID} 1box-${hypervisor}.${VDC_EDGE_NETWORKING}.$(arch).raw"
 }
 
 function start_box() {
