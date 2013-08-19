@@ -11,7 +11,7 @@ netfilter) ;;
 *) exit 0 ;;
 esac
 
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex <<EOS
   chkconfig --list openvswitch && { chkconfig openvswitch off; } || :
 EOS
 
@@ -20,7 +20,7 @@ openvz) ;;
 *) exit 0 ;;
 esac
 
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex <<EOS
   # default
   yum remove -y kmod-openvswitch-vzkernel
 EOS

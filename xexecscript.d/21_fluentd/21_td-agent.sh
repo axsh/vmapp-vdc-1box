@@ -8,7 +8,7 @@ set -e
 
 echo "doing execscript.sh: $1"
 
-chroot $1 $SHELL <<'EOS'
+chroot $1 $SHELL -ex <<'EOS'
   pkg_names="
    td-agent
   "

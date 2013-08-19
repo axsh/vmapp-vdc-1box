@@ -8,7 +8,7 @@ set -e
 
 echo "doing execscript.sh: $1"
 
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex -ex <<EOS
   zabbix_version=1.8.16
   [[ -n "${zabbix_version}" ]] && {
     zabbix_version="-${zabbix_version}"
@@ -19,7 +19,7 @@ chroot $1 $SHELL <<EOS
      zabbix-agent${zabbix_version}
 EOS
 
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex -ex <<EOS
   chkconfig --list zabbix-agent
  #chkconfig zabbix-agent on
 EOS

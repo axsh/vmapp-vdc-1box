@@ -13,7 +13,7 @@ kvm) ;;
 *) exit 0 ;;
 esac
 
-chroot $1 $SHELL <<'EOS'
+chroot $1 $SHELL -ex <<'EOS'
   pkg_names="
    wakame-vdc-hva-kvm-vmapp-config
   "

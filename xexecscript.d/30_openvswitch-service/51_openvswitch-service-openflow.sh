@@ -11,6 +11,6 @@ openflow) ;;
 *) exit 0;;
 esac
 
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex <<EOS
   /opt/axsh/wakame-vdc/rpmbuild/helpers/set-openvswitch-conf.sh
 EOS

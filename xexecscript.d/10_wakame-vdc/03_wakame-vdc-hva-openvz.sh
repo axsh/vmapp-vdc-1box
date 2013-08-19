@@ -13,7 +13,7 @@ openvz) ;;
 *) exit 0 ;;
 esac
 
-chroot $1 $SHELL <<'EOS'
+chroot $1 $SHELL -ex <<'EOS'
   pkg_names="
    wakame-vdc-hva-openvz-vmapp-config
   "
@@ -32,6 +32,6 @@ chroot $1 $SHELL <<'EOS'
 EOS
 
 # don't use "'EOS'" here
-chroot $1 $SHELL <<EOS
+chroot $1 $SHELL -ex <<EOS
   yum install -y http://dlc.wakame.axsh.jp/packages/rhel/6/master/20120912124632gitff83ce0/${basearch}/kmod-openvswitch-vzkernel-1.6.1-1.el6.${distro_arch}.rpm
 EOS
