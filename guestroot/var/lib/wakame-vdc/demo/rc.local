@@ -66,11 +66,14 @@ mysql -uroot <<'EOS'
 EOS
 show_timestamp
 
-##### 1.8.16 specific
+##### zabbix-server 1.8
 
-mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/schema/mysql.sql
-mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/data/data.sql
-mysql -uroot zabbix < /usr/share/doc/zabbix-server-1.8.16/data/images_mysql.sql
+while read line; do
+  mysql -uroot zabbix < ${line}
+done < <(
+  rpm -ql zabbix-server-mysql | grep schema/mysql.sql
+  rpm -ql zabbix-server-mysql | egrep '/data/.*\.sql$'
+)
 show_timestamp
 
 ### add core data
