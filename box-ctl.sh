@@ -133,7 +133,7 @@ function raw2vmdk_box() {
 monitor_port=${monitor_port:-4444}
 vnc_port=${vnc_port:-1002}
 serial_port=${serial_port:-5555}
-vif_num=${vif_num:-2}
+vif_num=${vif_num:-1}
 mem_size=${mem_size:-2048}
 cpu_num=${cpu_num:-4}
 cpu_type=${cpu_type:-host}
