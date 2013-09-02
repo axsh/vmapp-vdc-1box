@@ -15,8 +15,8 @@ chroot $1 $SHELL -ex <<'EOS'
   "
 
   for pkg_name in ${pkg_names}; do
-    yum search ${pkg_name} | egrep -q ${pkg_name} || continue
-    yum install -y ${pkg_name}
+    yum search  --enablerepo=wakame-vdc-rhel6 --enablerepo=wakame-3rd-rhel6    ${pkg_name} | egrep -q ${pkg_name} || continue
+    yum install --enablerepo=wakame-vdc-rhel6 --enablerepo=wakame-3rd-rhel6 -y ${pkg_name}
   done
 
   chkconfig --list tgtd
