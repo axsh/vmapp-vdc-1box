@@ -18,4 +18,5 @@ chroot $1 $SHELL -ex <<EOS
   sed 's,^#baseurl=.*,baseurl=${baseurl},' /etc/yum.repos.d/CentOS-Base.repo.saved \
    | sed -n '1,/^\[updates\]/p' \
    | egrep -v  "^\[updates\]" > /etc/yum.repos.d/CentOS-Base.repo
+  sed -i 's,^mirrorlist,#mirrorlist,' /etc/yum.repos.d/CentOS-Base.repo
 EOS
