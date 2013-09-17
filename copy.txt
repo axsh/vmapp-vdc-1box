@@ -27,7 +27,8 @@ guestroot/etc/wakame-vdc/dolphin.conf                  /etc/wakame-vdc/dolphin.c
 guestroot/var/lib/wakame-vdc/demo/dolphin.sql          /var/lib/wakame-vdc/demo/dolphin.sql
 guestroot/var/lib/wakame-vdc/demo/cassandra_schema.txt /var/lib/wakame-vdc/demo/cassandra_schema.txt
 
-guestroot/etc/td-agent/td-agent.conf /etc/td-agent/td-agent.conf
+guestroot/etc/td-agent/td-agent.conf                      /etc/td-agent/td-agent.conf
+guestroot/etc/td-agent/plugin/out_wakame_vdc_log_store.rb /etc/td-agent/plugin/out_wakame_vdc_log_store.rb
 
 # vdc-nwmongw
 
