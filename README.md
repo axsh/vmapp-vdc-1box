@@ -1,7 +1,7 @@
 vmapp-vdc-1box
 ==============
 
-[Wakame-VDC](https://github.com/axsh/wakame-vdc) demobox/testbox.
+[Wakame-vdc](https://github.com/axsh/wakame-vdc) demobox/testbox.
 
 pre-setup
 ---------
