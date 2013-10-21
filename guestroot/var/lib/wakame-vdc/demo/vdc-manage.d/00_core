@@ -86,6 +86,7 @@ network dhcp addrange nw-demo6   10.102.0.10  10.102.0.240
 network dhcp addrange nw-demo7   10.103.0.10  10.103.0.240
 network dhcp addrange nw-demo8   10.1.0.10    10.1.0.240
 network dhcp addrange nw-minimum 10.104.0.100 10.104.0.100
+network dhcp addrange nw-external 10.105.0.100 10.105.0.254
 
 # resource mapping
 
