@@ -28,6 +28,10 @@ network dc add vnet --allow-new-networks true
 network dc add-network-mode vnet l2overlay
 network dc del-network-mode vnet passthrough
 
+network dc add              external
+network dc add-network-mode external securitygroup
+network dc del-network-mode external passthrough
+
 # network (nw-*)
 
 network add  --uuid nw-demo1 --ipv4-network 10.0.2.0   --ipv4-gw 10.0.2.2 --prefix 24 --domain vdc.local --metric  9 --service-type std --display-name "demo1" --ip-assignment "asc"
@@ -39,6 +43,7 @@ network add  --uuid nw-demo6  --network-mode l2overlay  --ipv4-network 10.102.0.
 network add  --uuid nw-demo7  --network-mode l2overlay  --ipv4-network 10.103.0.0  --ipv4-gw 10.103.0.1  --prefix 24  --domain vnet7.local  --metric 10  --service-type std  --display-name "demo7"  --ip-assignment "asc"
 network add  --uuid nw-demo8  --ipv4-network 10.1.0.0  --ipv4-gw 10.1.0.1  --prefix 24  --domain vnet8.local  --metric 10  --service-type lb  --display-name "demo8"  --ip-assignment "asc" --network-mode passthrough
 network add  --uuid nw-minimum --ipv4-network 10.104.0.100 --prefix 31 --domain vdc.local --metric 10 --service-type std --display-name "minimum" --ip-assignment "asc"
+network add  --uuid nw-external --ipv4-network 10.105.0.0 --ipv4-gw 10.105.0.1 --prefix 24 --domain vdc.local --metric 10 --service-type std --display-name "external" --ip-assignment "asc"
 
 # network forwarding
 
@@ -51,12 +56,20 @@ network forward nw-demo6   null1
 network forward nw-demo7   null1
 network forward nw-demo8   management
 network forward nw-minimum public
+network forward nw-external external
 
 # network service
 
 network service dhcp nw-demo6 --ipv4=10.102.0.2
 network service dhcp nw-demo7 --ipv4=10.103.0.2
 network service dns  nw-demo7 --ipv4=10.103.0.2
+network service external-ip nw-external
+
+# network pool
+
+network pool add --uuid="external" --display-name="external ips"
+network pool add-dcn ipp-external external
+
 
 # network dhcp ip address range
 
