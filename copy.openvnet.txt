@@ -1,0 +1,1 @@
+guestroot.openvnet/etc/wakame-vdc/hva.conf /etc/wakame-vdc/hva.conf
