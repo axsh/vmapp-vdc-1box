@@ -31,6 +31,8 @@ kvm64.netfilter:
 	time sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=netfilter setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 kvm64.openflow:
 	time sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=openflow  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
+kvm64.openvnet:
+	time sudo VDC_HYPERVISOR=kvm VDC_EDGE_NETWORKING=openvnet  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 
 kvm32: kvm32.netfilter kvm32.openflow
 kvm32.netfilter:
