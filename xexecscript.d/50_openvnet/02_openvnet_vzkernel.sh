@@ -11,7 +11,7 @@ chroot $1 $SHELL -ex <<'EOS'
   yum install -y http://download.openvz.org/kernel/branches/rhel6-2.6.32/042stab084.20/vzkernel-firmware-2.6.32-042stab084.20.noarch.rpm
   yum install -y http://download.openvz.org/kernel/branches/rhel6-2.6.32/042stab084.20/vzkernel-2.6.32-042stab084.20.x86_64.rpm
 
-  sed -i -e 's/^default=[0-9]*/default=1/' /boot/grub/grub.conf
+  sed -i -e 's/^default=[0-9]*/default=2/' /boot/grub/grub.conf
 
   cat <<'GCNF' >> /boot/grub/grub.conf
 title OpenVZ (2.6.32-042stab084.20)

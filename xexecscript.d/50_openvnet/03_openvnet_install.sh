@@ -13,6 +13,7 @@ chroot $1 $SHELL -ex <<'EOS'
     wakame-vnet-common
     wakame-vnet-vnmgr
     wakame-vnet-vna
+    wakame-vnet-webapi
   "
   for pkg_name in ${pkg_names}; do
     yumdownloader ${pkg_name}
