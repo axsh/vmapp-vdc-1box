@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# requires:
+#  bash
+#
+set -e
+set -x
+
+exec > >(tee /var/log/vnet-firstboot.log) 2>&1
+
+function show_timestamp() {
+  local message=${1:-'>>>'}
+  echo "#[timestamp](${message})" $(date +%FT%X.%N)
+}
+
+## Wakame-VDC
+
+show_timestamp begin
+
+### stop services
+
+initctl stop vnet-vna    || :
+initctl stop vnet-webapi || :
+initctl stop vnet-vnmgr  || :
+
+sleep 10
+show_timestamp
+
+### initialize database
+
+for dbname in vnet vnet_test; do
+  yes | mysqladmin -uroot drop ${dbname} || :
+  mysqladmin -uroot create ${dbname} --default-character-set=utf8
+done
+show_timestamp
+
+#### vnet db init
+
+for dirpath in /opt/axsh/openvnet/vnet; do
+  cd ${dirpath}
+  /opt/axsh/openvnet/ruby/bin/bundle exec rake db:init --trace
+  /opt/axsh/openvnet/ruby/bin/bundle exec rake test:db:init --trace
+done
+show_timestamp
+
+### add core data
+
+cd /opt/axsh/openvnet/vnctl
+
+bundle exec ./bin/vnctl datapaths add --uuid=dp-1 --display-name=dp1 --dpid=0x0000aaaaaaaaaaaa --node-id=vna --ipv4_address=172.16.40.1
+bundle exec ./bin/vnctl networks add --uuid=nw-public --display-name=public --ipv4-network=172.16.40.0 --ipv4-prefix=24 --network-mode=physical --domain-name=public
+bundle exec ./bin/vnctl networks add --uuid=nw-vnet1 --display-name=vnet1 --ipv4-network=10.101.0.0 --ipv4-prefix=24 --network-mode=virtual --domain-name=vnet1
+bundle exec ./bin/vnctl interfaces add --uuid=if-dp1eth0 --mode=host --port-name=eth0 --mac-address=02:01:00:00:00:01 --owner-datapath-uuid=dp-1 --ipv4-address=172.16.40.2 --network-uuid=nw-public
+bundle exec ./bin/vnctl datapaths networks add dp-1 nw-vnet1 --broadcast-mac-address=02:00:01:aa:01:01 --interface-uuid=if-dp1eth0
+
+show_timestamp end
