@@ -15,6 +15,8 @@ lxc64.netfilter:
 	time sudo VDC_HYPERVISOR=lxc VDC_EDGE_NETWORKING=netfilter setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 lxc64.openflow:
 	time sudo VDC_HYPERVISOR=lxc VDC_EDGE_NETWORKING=openflow  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
+lxc64.openvnet:
+	time sudo VDC_HYPERVISOR=lxc VDC_EDGE_NETWORKING=openvnet  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 
 lxc32: lxc32.netfilter lxc32.openflow
 lxc32.netfilter:
@@ -67,6 +69,8 @@ dummy64.netfilter:
 	time sudo VDC_HYPERVISOR=dummy VDC_EDGE_NETWORKING=netfilter setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 dummy64.openflow:
 	time sudo VDC_HYPERVISOR=dummy VDC_EDGE_NETWORKING=openflow  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
+dummy64.openvnet:
+	time sudo VDC_HYPERVISOR=dummy VDC_EDGE_NETWORKING=openvnet  setarch x86_64 ./vmbuilder/kvm/rhel/6/misc/kvm-ctl.sh build --config-path=./vmbuilder.conf
 
 dummy32: dummy32.netfilter dummy32.openflow
 dummy32.netfilter:
