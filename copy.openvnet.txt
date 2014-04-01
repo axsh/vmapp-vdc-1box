@@ -1,4 +1,4 @@
 guestroot.openvnet/etc/wakame-vdc/hva.conf /etc/wakame-vdc/hva.conf
 guestroot.openvnet/var/lib/openvnet/demo/rc.local /var/lib/openvnet/demo/rc.local
-guestroot.openvnet/etc/sysconfig/network-scripts/ifcfg-eth0
-guestroot.openvnet/etc/sysconfig/network-scripts/ifcfg-br0
+guestroot.openvnet/etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0
+guestroot.openvnet/etc/sysconfig/network-scripts/ifcfg-br0 /etc/sysconfig/network-scripts/ifcfg-br0
