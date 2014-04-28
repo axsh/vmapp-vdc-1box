@@ -12,8 +12,8 @@ chroot $1 $SHELL -ex <<'EOS'
   chkconfig redis on
   sed -i -e 's/^\(bind\)/#\1/' /etc/redis.conf
 
-  curl -o /etc/yum.repos.d/openvnet.repo -R https://raw.github.com/axsh/openvnet/master/openvnet.repo
-  curl -o /etc/yum.repos.d/openvnet-third-party.repo -R https://raw.github.com/axsh/openvnet/master/openvnet-third-party.repo
+  curl -o /etc/yum.repos.d/openvnet.repo -R https://raw.githubusercontent.com/axsh/openvnet/master/openvnet.repo
+  curl -o /etc/yum.repos.d/openvnet-third-party.repo -R https://raw.githubusercontent.com/axsh/openvnet/master/openvnet-third-party.repo
 
   yum clean metadata --disablerepo=* --enablerepo=openvnet*
 
