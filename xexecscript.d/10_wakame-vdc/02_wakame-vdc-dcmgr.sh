@@ -9,6 +9,10 @@ set -e
 echo "doing execscript.sh: $1"
 
 chroot $1 $SHELL -ex <<'EOS'
+  rpm -qi rabbitmq-server || {
+    yum install -y https://www.rabbitmq.com/releases/rabbitmq-server/v2.7.1/rabbitmq-server-2.7.1-1.noarch.rpm
+  }
+
   pkg_names="
    wakame-vdc-dcmgr-vmapp-config
    wakame-vdc-example-1box-dcmgr-vmapp-config
