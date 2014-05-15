@@ -67,6 +67,7 @@ function start_box() {
    --serial-port  ${serial_port}  \
    --drive-type   ${drive_type} \
    --nic-driver   ${nic_driver} \
+   --rtc          ${rtc} \
    --image-path   $(base_image_file).raw
 }
 
@@ -140,6 +141,7 @@ cpu_type=${cpu_type:-host}
 brname=${brname:-vboxbr0}
 drive_type=${drive_type:-virtio} # [ virtio, ide ]
 nic_driver=${nic_driver:-virtio-net-pci} # [ virtio-net-pci, e1000 ]
+rtc=${rtc:-base=localtime}
 
 ### this script
 
