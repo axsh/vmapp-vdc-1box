@@ -150,4 +150,5 @@ function install_cassandra() {
 
 # main
 
-install_cassandra ${chroot_dir}
+### [2014/08/07] disable cassandra installation
+### install_cassandra ${chroot_dir}
