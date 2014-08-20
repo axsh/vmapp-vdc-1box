@@ -72,7 +72,7 @@ function start_box() {
 }
 
 function stop_box() {
-  echo quit | nc localhost ${monitor_port}
+  echo quit | nc 127.0.0.1 ${monitor_port}
 }
 
 function release_base_box() {
