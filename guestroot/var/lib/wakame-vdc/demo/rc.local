@@ -70,7 +70,8 @@ show_timestamp
 ##### zabbix-server 1.8
 
 while read line; do
-  mysql -uroot zabbix < ${line}
+  # [2014/08/21] disable zabbix db import
+  echo "mysql -uroot zabbix < ${line}"
 done < <(
   rpm -ql zabbix-server-mysql | grep schema/mysql.sql
   rpm -ql zabbix-server-mysql | egrep '/data/.*\.sql$'
