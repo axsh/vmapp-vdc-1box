@@ -1,6 +1,6 @@
 # storage node (sta)
 
-storage add sta.demo1 --force --uuid sn-demo1 --base-path /opt/axsh/wakame-vdc/volumes --disk-space 1048576 --ipaddr 127.0.0.1 --storage-type raw --snapshot-base-path /opt/axsh/wakame-vdc/snap
+storage iscsi add sta.demo1 --force --uuid sn-demo1 --disk-space 1048576 --ipaddr 127.0.0.1
 
 # backupstorage
 
