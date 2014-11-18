@@ -98,9 +98,9 @@ case "$(arch)" in
 x86_64) sed -i -e "s,wmi-demolb,wmi-haproxy1d64," /etc/wakame-vdc/dcmgr.conf ;;
 esac
 
-### bkst-demo2(nginx) -> bkst-demo3(apache)
+### bkst-local(config file default) -> bkst-demo3(apache)
 
-sed -i -e "s,bkst-demo2,bkst-demo3," /etc/wakame-vdc/dcmgr.conf
+sed -i -e "s,bkst-local,bkst-demo3," /etc/wakame-vdc/dcmgr.conf
 
 ### start services
 
