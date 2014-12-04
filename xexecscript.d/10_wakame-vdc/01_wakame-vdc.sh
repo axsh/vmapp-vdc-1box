@@ -24,3 +24,15 @@ chroot $1 $SHELL -ex <<'EOS'
   yum clean metadata --disablerepo=* --enablerepo=wakame-vdc-rhel6 --enablerepo=wakame-3rd-rhel6
   yum update  -y     --disablerepo=* --enablerepo=wakame-vdc-rhel6 --enablerepo=wakame-3rd-rhel6
 EOS
+
+chroot $1 $SHELL -ex <<'EOS'
+  releasever=$(< /etc/yum/vars/releasever)
+
+  case "${releasever}" in
+    6.[0-5])
+      # wakame-vdc-ruby depends on libyaml.
+      # TODO: handle arch type.
+      yum install -y http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/os/x86_64/Packages/libyaml-0.1.3-1.4.el6.x86_64.rpm
+      ;;
+  esac
+EOS
