@@ -3,6 +3,8 @@ vmapp-vdc-1box
 
 [Wakame-vdc](https://github.com/axsh/wakame-vdc) demobox/testbox.
 
+![vmapp-vdc-1box](https://cloud.githubusercontent.com/assets/76867/5339275/11b1bd34-7f22-11e4-8d21-ecf6779ae3da.png)
+
 pre-setup
 ---------
 
