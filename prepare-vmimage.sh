@@ -59,7 +59,7 @@ function validate_vmimage() {
   case "${vmimage}" in
        centos-6.4) ;;
           vanilla) ;;
-  lb-centos6-stud) ;;
+lb-centos6.6-stud) ;;
            lbnode) ;;
                 *) return 1 ;; # unknown
   esac
@@ -68,7 +68,7 @@ function validate_vmimage() {
 function deploy_vmimage_matrix() {
   local hypervisors="${1:-"kvm lxc openvz"}"
   local archs="${2:-"x86_64 i686"}"
-  local vmimages="${3:-"centos-6.4 vanilla lb-centos6-stud lbnode"}"
+  local vmimages="${3:-"centos-6.4 vanilla lb-centos6.6-stud lbnode"}"
 
   local arch hypervisor vmimage
 
