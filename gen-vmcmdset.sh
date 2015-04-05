@@ -14,7 +14,7 @@ vmimage_map="
 
  lbnode1d64=lbnode.x86_64
 
- haproxy1d64=lb-centos6-stud.x86_64
+ haproxy1d64=lb-centos6.6-stud.x86_64
 "
 
 function build_cmdset() {
