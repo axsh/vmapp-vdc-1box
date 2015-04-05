@@ -5,7 +5,6 @@
 #
 set -e
 set -o pipefail
-set -x
 
 vmimage_map='
  centos1d64=centos-6.4.x86_64
@@ -123,7 +122,7 @@ function generate_cmdset() {
 	# hierarchy: bkst-XXX / bo-XXX / wmi-XXX
 	EOS
     render_cmdset ${hypervisor}
-  } | tee ${filepath}
+  } > ${filepath}
 }
 
 for hypervisor in kvm lxc openvz dummy; do
