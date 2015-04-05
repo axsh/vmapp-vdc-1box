@@ -1,6 +1,6 @@
 guestroot.kvm.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/01_core.x86_64 /var/lib/wakame-vdc/demo/vdc-manage.d/01_core.x86_64
 guestroot.kvm.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/02_core.x86_64 /var/lib/wakame-vdc/demo/vdc-manage.d/02_core.x86_64
-guestroot.kvm.x86_64/var/lib/wakame-vdc/images/centos-6.4.x86_64.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.4.x86_64.kvm.md.raw.tar.gz
+guestroot.kvm.x86_64/var/lib/wakame-vdc/images/centos-6.6.x86_64.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.6.x86_64.kvm.md.raw.tar.gz
 guestroot.kvm.x86_64/var/lib/wakame-vdc/images/lb-centos6.6-stud.x86_64.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/lb-centos6-stud.x86_64.kvm.md.raw.tar.gz
 guestroot.kvm.x86_64/var/lib/wakame-vdc/images/lbnode.x86_64.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/lbnode.x86_64.kvm.md.raw.tar.gz
 guestroot.kvm.x86_64/var/lib/wakame-vdc/images/vanilla.x86_64.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/vanilla.x86_64.kvm.md.raw.tar.gz
