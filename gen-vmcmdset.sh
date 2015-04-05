@@ -92,7 +92,7 @@ EOS
 function render_cmdset() {
   local hypervisor=$1
 
-  local keyval uuid basename filepath arch
+  local keyval= uuid= basename= filepath= arch=
   for keyval in ${vmimage_map}; do
     uuid=${keyval%%=*}
     basename=${keyval##*=}
