@@ -3,20 +3,18 @@
 # requires:
 #  bash
 #
+set -e
+set -o pipefail
 
-vmimage_map="
- centos1d32=centos-6.4.i686
+vmimage_map='
  centos1d64=centos-6.4.x86_64
 
- vanilla1d32=vanilla.i686
  vanilla1d64=vanilla.x86_64
 
- lbnode1d32=lbnode.i686
  lbnode1d64=lbnode.x86_64
 
- haproxy1d32=lb-centos6-stud.i686
- haproxy1d64=lb-centos6-stud.x86_64
-"
+ haproxy1d64=lb-centos6*-stud.x86_64
+'
 
 function build_cmdset() {
   local localpath=$1
@@ -29,7 +27,6 @@ function build_cmdset() {
   storage_id=${storage_id:-bkst-demo1}
   uuid=${uuid:-centos1d}
   hypervisor=${hypervisor:-openvz}
-  uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/vmimage/vanilla.x86_64.${hypervisor}.md.raw.tar.gz
   arch=${arch:-x86_64}
   localname=$(basename ${localpath})
   storetype=local
@@ -89,12 +86,12 @@ EOS
 function render_cmdset() {
   local hypervisor=$1
 
-  local keyval uuid basename filepath arch
+  local keyval= uuid= basename= filepath= arch=
   for keyval in ${vmimage_map}; do
     uuid=${keyval%%=*}
     basename=${keyval##*=}
 
-    filepath=$(find guestroot.${hypervisor} -type f -name ${basename}.*)
+    filepath=$(find guestroot.${hypervisor}* -type f -name ${basename}.*)
 
     case ${basename} in
     *.i686)   arch=x86    ;;
@@ -114,7 +111,9 @@ function render_cmdset() {
 function generate_cmdset() {
   local hypervisor=$1
 
-  local filepath=guestroot.${hypervisor}/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+  local basepath=guestroot.${hypervisor}/var/lib/wakame-vdc/demo/vdc-manage.d
+  local filepath=${basepath}/02_core
+  mkdir -p ${basepath}
 
   echo "[INFO] Generating ${filepath}"
   {
@@ -123,7 +122,7 @@ function generate_cmdset() {
 	# hierarchy: bkst-XXX / bo-XXX / wmi-XXX
 	EOS
     render_cmdset ${hypervisor}
-  } | tee ${filepath}
+  } > ${filepath}
 }
 
 for hypervisor in kvm lxc openvz dummy; do
