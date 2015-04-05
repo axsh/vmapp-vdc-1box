@@ -113,7 +113,9 @@ function render_cmdset() {
 function generate_cmdset() {
   local hypervisor=$1
 
-  local filepath=guestroot.${hypervisor}/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+  local basepath=guestroot.${hypervisor}/var/lib/wakame-vdc/demo/vdc-manage.d
+  local filepath=${basepath}/02_core
+  mkdir -p ${basepath}
 
   echo "[INFO] Generating ${filepath}"
   {
