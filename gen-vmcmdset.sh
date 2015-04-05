@@ -93,7 +93,7 @@ function render_cmdset() {
     uuid=${keyval%%=*}
     basename=${keyval##*=}
 
-    filepath=$(find guestroot.${hypervisor} -type f -name ${basename}.*)
+    filepath=$(find guestroot.${hypervisor}* -type f -name ${basename}.*)
 
     case ${basename} in
     *.i686)   arch=x86    ;;
