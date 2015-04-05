@@ -8,11 +8,7 @@ set -o pipefail
 
 vmimage_map='
  centos1d64=centos-6.4.x86_64
-
- vanilla1d64=vanilla.x86_64
-
  lbnode1d64=lbnode.x86_64
-
  haproxy1d64=lb-centos6*-stud.x86_64
 '
 

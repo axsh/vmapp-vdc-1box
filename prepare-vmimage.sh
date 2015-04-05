@@ -69,7 +69,8 @@ function deploy_vmimage_matrix() {
   local hypervisors="${1:-"kvm lxc openvz"}"
  #local archs="${2:-"x86_64 i686"}"
   local archs="${2:-"x86_64"}"
-  local vmimages="${3:-"centos-6.4 vanilla lb-centos6.6-stud lbnode"}"
+ #local vmimages="${3:-"centos-6.4 vanilla lb-centos6.6-stud lbnode"}"
+  local vmimages="${3:-"centos-6.4 lb-centos6.6-stud lbnode"}"
 
   local arch hypervisor vmimage
 
