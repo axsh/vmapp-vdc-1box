@@ -3,6 +3,9 @@
 # requires:
 #  bash
 #
+set -e
+set -o pipefail
+set -x
 
 vmimage_map="
  centos1d32=centos-6.4.i686
