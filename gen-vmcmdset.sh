@@ -28,7 +28,6 @@ function build_cmdset() {
   storage_id=${storage_id:-bkst-demo1}
   uuid=${uuid:-centos1d}
   hypervisor=${hypervisor:-openvz}
-  uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/vmimage/vanilla.x86_64.${hypervisor}.md.raw.tar.gz
   arch=${arch:-x86_64}
   localname=$(basename ${localpath})
   storetype=local
