@@ -88,6 +88,7 @@ function render_cmdset() {
     basename=${keyval##*=}
 
     filepath=$(find guestroot.${hypervisor}.${arch} -type f -name ${basename}.*)
+    [[ -n "${filepath}" ]] || continue
 
     case ${basename} in
     haproxy1d*) service_type=lb  ;;
