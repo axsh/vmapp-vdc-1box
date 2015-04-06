@@ -7,9 +7,9 @@ set -e
 set -o pipefail
 
 vmimage_map='
- centos1d64=centos-6.6.x86_64
- lbnode1d64=lbnode.x86_64
- haproxy1d64=lb-centos6*-stud.x86_64
+ centos1d=centos-6.6
+ lbnode1d=lbnode
+ haproxy1d=lb-centos6*-stud
 '
 
 function build_cmdset() {
@@ -84,8 +84,15 @@ function render_cmdset() {
 
   local keyval= uuid= basename= filepath=
   for keyval in ${vmimage_map}; do
+    keyval=${keyval}.${arch}
+
     uuid=${keyval%%=*}
     basename=${keyval##*=}
+
+    case "${arch}" in
+      i686) uuid=${uuid}32 ;;
+    x86_64) uuid=${uuid}64 ;;
+    esac
 
     filepath=$(find guestroot.${hypervisor}.${arch} -type f -name ${basename}.*)
     [[ -n "${filepath}" ]] || continue
