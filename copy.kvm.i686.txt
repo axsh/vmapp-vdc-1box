@@ -3,4 +3,3 @@ guestroot.kvm.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core /var/lib/wakame-
 guestroot.kvm.i686/var/lib/wakame-vdc/images/centos-6.6.i686.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.6.i686.kvm.md.raw.tar.gz
 guestroot.kvm.i686/var/lib/wakame-vdc/images/lb-centos6.6-stud.i686.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/lb-centos6.6-stud.i686.kvm.md.raw.tar.gz
 guestroot.kvm.i686/var/lib/wakame-vdc/images/lbnode.i686.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/lbnode.i686.kvm.md.raw.tar.gz
-guestroot.kvm.i686/var/lib/wakame-vdc/images/vanilla.i686.kvm.md.raw.tar.gz /var/lib/wakame-vdc/images/vanilla.i686.kvm.md.raw.tar.gz
