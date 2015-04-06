@@ -9,7 +9,7 @@ set -o pipefail
 vmimage_map='
  centos1d=centos-6.6
  lbnode1d=lbnode
- haproxy1d=lb-centos6*-stud
+ haproxy1d=lb-centos6.6-stud
 '
 
 function build_cmdset() {
@@ -94,7 +94,7 @@ function render_cmdset() {
     x86_64) uuid=${uuid}64 boarch=x86_64 ;;
     esac
 
-    filepath=$(find guestroot.${hypervisor}.${arch} -type f -name ${basename}.*)
+    filepath=$(find guestroot.${hypervisor}.${arch} -type f -name "${basename}.*")
     [[ -n "${filepath}" ]] || continue
 
     case ${basename} in
