@@ -121,6 +121,7 @@ function generate_cmdset() {
   } > ${filepath}
 }
 
-for hypervisor in kvm lxc openvz dummy; do
+hhypervisors="${1:-"kvm lxc openvz dummy"}"
+for hypervisor in ${hhypervisors}; do
   generate_cmdset ${hypervisor}
 done
