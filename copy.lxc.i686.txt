@@ -1,6 +1,6 @@
 guestroot.lxc.i686/var/lib/wakame-vdc/demo/vdc-manage.d/01_core.i686 /var/lib/wakame-vdc/demo/vdc-manage.d/01_core.i686
 guestroot.lxc.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core.i686 /var/lib/wakame-vdc/demo/vdc-manage.d/02_core.i686
-guestroot.lxc.i686/var/lib/wakame-vdc/images/centos-6.4.i686.lxc.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.4.i686.lxc.md.raw.tar.gz
+guestroot.lxc.i686/var/lib/wakame-vdc/images/centos-6.6.i686.lxc.md.raw.tar.gz /var/lib/wakame-vdc/images/centos-6.6.i686.lxc.md.raw.tar.gz
 guestroot.lxc.i686/var/lib/wakame-vdc/images/lb-centos6-stud.i686.lxc.md.raw.tar.gz /var/lib/wakame-vdc/images/lb-centos6-stud.i686.lxc.md.raw.tar.gz
 guestroot.lxc.i686/var/lib/wakame-vdc/images/lbnode.i686.lxc.md.raw.tar.gz /var/lib/wakame-vdc/images/lbnode.i686.lxc.md.raw.tar.gz
 guestroot.lxc.i686/var/lib/wakame-vdc/images/vanilla.i686.lxc.md.raw.tar.gz /var/lib/wakame-vdc/images/vanilla.i686.lxc.md.raw.tar.gz
