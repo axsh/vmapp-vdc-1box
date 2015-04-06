@@ -28,23 +28,15 @@ $ ./gen-vmcmdset.sh
 ```
 
 > ```
-> [INFO] Generating guestroot.kvm/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
-> [INFO] Generating guestroot.lxc/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
-> [INFO] Generating guestroot.openvz/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
-> [INFO] Generating guestroot.dummy/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.kvm.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.kvm.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.lxc.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.lxc.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.openvz.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.openvz.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.dummy.x86_64/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
+> [INFO] Generating guestroot.dummy.i686/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
 > ```
-
-Those generated files are not tracked with `git`.
-
-> ```
-> $ git status guestroot.kvm/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
-> # On branch update-lb-centos6
-> # Untracked files:
-> #   (use "git add <file>..." to include in what will be committed)
-> #
-> #       guestroot.kvm/var/lib/wakame-vdc/demo/vdc-manage.d/02_core
-> nothing added to commit but untracked files present (use "git add" to track)
-```
 
 ### Optional: Setup a bridge interface to run vm.
 
