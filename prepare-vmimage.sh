@@ -57,7 +57,7 @@ function validate_vmimage() {
   local vmimage=$1
 
   case "${vmimage}" in
-       centos-6.4) ;;
+       centos-6.6) ;;
           vanilla) ;;
 lb-centos6.6-stud) ;;
            lbnode) ;;
@@ -67,10 +67,9 @@ lb-centos6.6-stud) ;;
 
 function deploy_vmimage_matrix() {
   local hypervisors="${1:-"kvm lxc openvz"}"
- #local archs="${2:-"x86_64 i686"}"
-  local archs="${2:-"x86_64"}"
- #local vmimages="${3:-"centos-6.4 vanilla lb-centos6.6-stud lbnode"}"
-  local vmimages="${3:-"centos-6.4 lb-centos6.6-stud lbnode"}"
+  local archs="${2:-"x86_64 i686"}"
+ #local vmimages="${3:-"centos-6.6 vanilla lb-centos6.6-stud lbnode"}"
+  local vmimages="${3:-"centos-6.6 lb-centos6.6-stud lbnode"}"
 
   local arch hypervisor vmimage
 

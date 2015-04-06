@@ -7,9 +7,9 @@ set -e
 set -o pipefail
 
 vmimage_map='
- centos1d64=centos-6.4.x86_64
- lbnode1d64=lbnode.x86_64
- haproxy1d64=lb-centos6*-stud.x86_64
+ centos1d=centos-6.6
+ lbnode1d=lbnode
+ haproxy1d=lb-centos6.6-stud
 '
 
 function build_cmdset() {
@@ -80,19 +80,22 @@ EOS
 }
 
 function render_cmdset() {
-  local hypervisor=$1
+  local hypervisor=$1 arch=$2
 
-  local keyval= uuid= basename= filepath= arch=
+  local keyval= uuid= basename= filepath=
   for keyval in ${vmimage_map}; do
+    keyval=${keyval}.${arch}
+
     uuid=${keyval%%=*}
     basename=${keyval##*=}
 
-    filepath=$(find guestroot.${hypervisor}* -type f -name ${basename}.*)
-
-    case ${basename} in
-    *.i686)   arch=x86    ;;
-    *.x86_64) arch=x86_64 ;;
+    case "${arch}" in
+      i686) uuid=${uuid}32 boarch=x86    ;;
+    x86_64) uuid=${uuid}64 boarch=x86_64 ;;
     esac
+
+    filepath=$(find guestroot.${hypervisor}.${arch} -type f -name "${basename}.*")
+    [[ -n "${filepath}" ]] || continue
 
     case ${basename} in
     haproxy1d*) service_type=lb  ;;
@@ -100,14 +103,14 @@ function render_cmdset() {
     esac
 
     echo
-    uuid=${uuid} arch=${arch} build_cmdset ${filepath}
+    uuid=${uuid} arch=${boarch} build_cmdset ${filepath}
   done
 }
 
 function generate_cmdset() {
-  local hypervisor=$1
+  local hypervisor=$1 arch=$2
 
-  local basepath=guestroot.${hypervisor}/var/lib/wakame-vdc/demo/vdc-manage.d
+  local basepath=guestroot.${hypervisor}.${arch}/var/lib/wakame-vdc/demo/vdc-manage.d
   local filepath=${basepath}/02_core
   mkdir -p ${basepath}
 
@@ -117,10 +120,15 @@ function generate_cmdset() {
 	# vm image (wmi-*)
 	# hierarchy: bkst-XXX / bo-XXX / wmi-XXX
 	EOS
-    render_cmdset ${hypervisor}
+    render_cmdset ${hypervisor} ${arch}
   } > ${filepath}
 }
 
-for hypervisor in kvm lxc openvz dummy; do
-  generate_cmdset ${hypervisor}
+hhypervisors="${1:-"kvm lxc openvz dummy"}"
+archs=${2:-"x86_64 i686"}
+
+for hypervisor in ${hhypervisors}; do
+  for arch in ${archs}; do
+    generate_cmdset ${hypervisor} ${arch}
+  done
 done
