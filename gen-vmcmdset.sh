@@ -90,8 +90,8 @@ function render_cmdset() {
     basename=${keyval##*=}
 
     case "${arch}" in
-      i686) uuid=${uuid}32 ;;
-    x86_64) uuid=${uuid}64 ;;
+      i686) uuid=${uuid}32 boarch=x86    ;;
+    x86_64) uuid=${uuid}64 boarch=x86_64 ;;
     esac
 
     filepath=$(find guestroot.${hypervisor}.${arch} -type f -name ${basename}.*)
@@ -103,7 +103,7 @@ function render_cmdset() {
     esac
 
     echo
-    uuid=${uuid} arch=${arch} build_cmdset ${filepath}
+    uuid=${uuid} arch=${boarch} build_cmdset ${filepath}
   done
 }
 
