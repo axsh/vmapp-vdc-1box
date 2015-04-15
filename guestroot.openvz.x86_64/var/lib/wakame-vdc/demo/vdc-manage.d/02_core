@@ -16,5 +16,5 @@ image features wmi-lbnode1d64 --virtio
 ## haproxy1d64
 
 backupobject add  --storage-id=bkst-demo1  --uuid=bo-haproxy1d64  --display-name='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz'  --object-key=lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz  --size=2147483648  --allocation-size=469126871  --checksum=3e7c55440eeb4e85500d78cee2590fcd  --container-format=tgz  --description='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz'
-image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d64'  --is-cacheable
+image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type lb  --is-public  --display-name 'haproxy1d64'  --is-cacheable
 image features wmi-haproxy1d64 --virtio
