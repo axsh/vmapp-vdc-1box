@@ -4,17 +4,17 @@
 ## centos1d32
 
 backupobject add  --storage-id=bkst-demo1  --uuid=bo-centos1d32  --display-name='centos-6.6.i686.dummy.md.raw.tar.gz'  --object-key=centos-6.6.i686.dummy.md.raw.tar.gz  --size=0  --allocation-size=137  --checksum=cba25c4851b53e2a7df438c95700307c  --container-format=tgz  --description='centos-6.6.i686.dummy.md.raw.tar.gz'
-image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86  --description 'centos-6.6.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type lb  --is-public  --display-name 'centos1d32'  --is-cacheable
+image add local bo-centos1d32  --account-id a-shpoolxx  --uuid wmi-centos1d32  --arch x86  --description 'centos-6.6.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d32'  --is-cacheable
 image features wmi-centos1d32 --virtio
 
 ## lbnode1d32
 
 backupobject add  --storage-id=bkst-demo1  --uuid=bo-lbnode1d32  --display-name='lbnode.i686.dummy.md.raw.tar.gz'  --object-key=lbnode.i686.dummy.md.raw.tar.gz  --size=0  --allocation-size=134  --checksum=d6a498d5ba6fbad58662ccf1231f3883  --container-format=tgz  --description='lbnode.i686.dummy.md.raw.tar.gz'
-image add local bo-lbnode1d32  --account-id a-shpoolxx  --uuid wmi-lbnode1d32  --arch x86  --description 'lbnode.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type lb  --is-public  --display-name 'lbnode1d32'  --is-cacheable
+image add local bo-lbnode1d32  --account-id a-shpoolxx  --uuid wmi-lbnode1d32  --arch x86  --description 'lbnode.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d32'  --is-cacheable
 image features wmi-lbnode1d32 --virtio
 
 ## haproxy1d32
 
 backupobject add  --storage-id=bkst-demo1  --uuid=bo-haproxy1d32  --display-name='lb-centos6-stud.i686.dummy.md.raw.tar.gz'  --object-key=lb-centos6-stud.i686.dummy.md.raw.tar.gz  --size=0  --allocation-size=140  --checksum=fc7949a450477f7b193550c9b02eeae3  --container-format=tgz  --description='lb-centos6-stud.i686.dummy.md.raw.tar.gz'
-image add local bo-haproxy1d32  --account-id a-shpoolxx  --uuid wmi-haproxy1d32  --arch x86  --description 'lb-centos6-stud.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type lb  --is-public  --display-name 'haproxy1d32'  --is-cacheable
+image add local bo-haproxy1d32  --account-id a-shpoolxx  --uuid wmi-haproxy1d32  --arch x86  --description 'lb-centos6-stud.i686.dummy.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'haproxy1d32'  --is-cacheable
 image features wmi-haproxy1d32 --virtio
