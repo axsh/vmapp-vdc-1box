@@ -1,3 +1,7 @@
+# iptables
+
+guestroot/etc/sysconfig/iptables /etc/sysconfig/iptables
+
 # .repo file
 
 guestroot/etc/yum.repos.d/wakame-vdc.repo /etc/yum.repos.d/wakame-vdc.repo
