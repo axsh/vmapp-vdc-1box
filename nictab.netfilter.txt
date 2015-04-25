@@ -1,7 +1,7 @@
 ifname=eth0 bridge=br0 iftype=ethernet
 ifname=eth1 bridge=br1 iftype=tap
-ifname=br0 ip=10.0.2.15 mask=255.255.255.0 net=10.0.2.0 bcast=10.0.2.255 gw=10.0.2.2 iftype=bridge
-ifname=br1 ip=10.1.0.1  mask=255.255.255.0 net=10.1.0.0 bcast=10.1.0.255 gw=         iftype=bridge
+ifname=br0 ip=10.0.2.15 mask=255.255.255.0 net=10.0.2.0 bcast=10.0.2.255 gw=10.0.2.2 iftype=bridge mac=00:00:00:01:00:00
+ifname=br1 ip=10.1.0.1  mask=255.255.255.0 net=10.1.0.0 bcast=10.1.0.255 gw=         iftype=bridge mac=00:00:00:01:00:01
 
-ifname=lowbr0 iftype=tap onboot=yes bootproto=none mac=00:00:00:01:00:00 bridge=br0
-ifname=lowbr1 iftype=tap onboot=yes bootproto=none mac=00:00:00:01:00:01 bridge=br1
+#ifname=lowbr0 iftype=tap onboot=yes bootproto=none mac=00:00:00:01:00:00 bridge=br0
+#ifname=lowbr1 iftype=tap onboot=yes bootproto=none mac=00:00:00:01:00:01 bridge=br1
