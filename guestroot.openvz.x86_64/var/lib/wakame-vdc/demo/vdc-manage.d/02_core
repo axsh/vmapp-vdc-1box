@@ -3,18 +3,18 @@
 
 ## centos1d64
 
-backupobject add  --storage-id=bkst-demo1  --uuid=bo-centos1d64  --display-name='centos-6.6.x86_64.openvz.md.raw.tar.gz'  --object-key=centos-6.6.x86_64.openvz.md.raw.tar.gz  --size=4294967296  --allocation-size=324513275  --checksum=0c9dddd4db82ca2fe9b867150d3d2df8  --container-format=tgz  --description='centos-6.6.x86_64.openvz.md.raw.tar.gz'
-image add local bo-centos1d64  --account-id a-shpoolxx  --uuid wmi-centos1d64  --arch x86_64  --description 'centos-6.6.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'centos1d64'  --is-cacheable
+backupobject add --storage-id=bkst-demo1 --uuid=bo-centos1d64 --display-name='centos-6.6.x86_64.openvz.md.raw.tar.gz' --object-key=centos-6.6.x86_64.openvz.md.raw.tar.gz --size=4294967296 --allocation-size=324513275 --checksum=0c9dddd4db82ca2fe9b867150d3d2df8 --container-format=tgz --description='centos-6.6.x86_64.openvz.md.raw.tar.gz'
+image add local bo-centos1d64 --account-id a-shpoolxx --uuid wmi-centos1d64 --arch x86_64 --description 'centos-6.6.x86_64.openvz.md.raw.tar.gz local' --file-format raw --root-device label:root --service-type std --is-public --display-name 'centos1d64' --is-cacheable
 image features wmi-centos1d64 --virtio
 
 ## lbnode1d64
 
-backupobject add  --storage-id=bkst-demo1  --uuid=bo-lbnode1d64  --display-name='lbnode.x86_64.openvz.md.raw.tar.gz'  --object-key=lbnode.x86_64.openvz.md.raw.tar.gz  --size=2147483648  --allocation-size=494090998  --checksum=c3ecd2e0c0952ac629fecb9fd34f1880  --container-format=tgz  --description='lbnode.x86_64.openvz.md.raw.tar.gz'
-image add local bo-lbnode1d64  --account-id a-shpoolxx  --uuid wmi-lbnode1d64  --arch x86_64  --description 'lbnode.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type std  --is-public  --display-name 'lbnode1d64'  --is-cacheable
+backupobject add --storage-id=bkst-demo1 --uuid=bo-lbnode1d64 --display-name='lbnode.x86_64.openvz.md.raw.tar.gz' --object-key=lbnode.x86_64.openvz.md.raw.tar.gz --size=2147483648 --allocation-size=494090998 --checksum=c3ecd2e0c0952ac629fecb9fd34f1880 --container-format=tgz --description='lbnode.x86_64.openvz.md.raw.tar.gz'
+image add local bo-lbnode1d64 --account-id a-shpoolxx --uuid wmi-lbnode1d64 --arch x86_64 --description 'lbnode.x86_64.openvz.md.raw.tar.gz local' --file-format raw --root-device label:root --service-type std --is-public --display-name 'lbnode1d64' --is-cacheable
 image features wmi-lbnode1d64 --virtio
 
 ## haproxy1d64
 
-backupobject add  --storage-id=bkst-demo1  --uuid=bo-haproxy1d64  --display-name='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz'  --object-key=lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz  --size=2147483648  --allocation-size=469126871  --checksum=3e7c55440eeb4e85500d78cee2590fcd  --container-format=tgz  --description='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz'
-image add local bo-haproxy1d64  --account-id a-shpoolxx  --uuid wmi-haproxy1d64  --arch x86_64  --description 'lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz local'  --file-format raw  --root-device label:root  --service-type lb  --is-public  --display-name 'haproxy1d64'  --is-cacheable
+backupobject add --storage-id=bkst-demo1 --uuid=bo-haproxy1d64 --display-name='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz' --object-key=lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz --size=2147483648 --allocation-size=470420388 --checksum=cafbe29e468be992e49b68285bb759db --container-format=tgz --description='lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz'
+image add local bo-haproxy1d64 --account-id a-shpoolxx --uuid wmi-haproxy1d64 --arch x86_64 --description 'lb-centos6.6-stud.x86_64.openvz.md.raw.tar.gz local' --file-format raw --root-device label:root --service-type lb --is-public --display-name 'haproxy1d64' --is-cacheable
 image features wmi-haproxy1d64 --virtio
