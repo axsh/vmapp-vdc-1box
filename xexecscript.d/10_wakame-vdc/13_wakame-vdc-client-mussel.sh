@@ -11,6 +11,7 @@ echo "doing execscript.sh: $1"
 chroot $1 $SHELL -ex <<'EOS'
   pkg_names="
    wakame-vdc-client-mussel
+   bash-completion
   "
 
   for pkg_name in ${pkg_names}; do
