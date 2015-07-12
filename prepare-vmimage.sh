@@ -27,7 +27,8 @@ function deploy_vmimage() {
 
   echo "===> ${vmimage_path}"
   if ! [[ -f "${vmimage_path}" ]]; then
-    curl -fSkLR --retry 3 --retry-delay 3 ${vmimage_uri} -o ${vmimage_path}
+    curl -fSkLR --retry 3 --retry-delay 3 ${vmimage_uri} -o ${vmimage_path}.tmp
+    mv ${vmimage_path}.tmp ${vmimage_path}
   fi
 }
 
