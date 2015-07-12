@@ -23,7 +23,7 @@ function deploy_vmimage() {
   local vmimage_uri=${vmimage_base_uri}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
   local vmimage_path=${vmimage_base_path}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
 
-  [[ -d ${vmimage_base_path} ]] || mkdir -p ${vmimage_base_path}
+  mkdir -p ${vmimage_base_path}
 
   echo "===> ${vmimage_path}"
   [[ -f "${vmimage_path}" ]] || {
