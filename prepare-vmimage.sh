@@ -26,9 +26,9 @@ function deploy_vmimage() {
   mkdir -p ${vmimage_base_path}
 
   echo "===> ${vmimage_path}"
-  [[ -f "${vmimage_path}" ]] || {
+  if ! [[ -f "${vmimage_path}" ]]; then
     curl -fSkL --retry 3 -o ${vmimage_path} -R ${vmimage_uri}
-  }
+  fi
 }
 
 function validate_arch() {
