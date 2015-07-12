@@ -23,12 +23,13 @@ function deploy_vmimage() {
   local vmimage_uri=${vmimage_base_uri}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
   local vmimage_path=${vmimage_base_path}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
 
-  [[ -d ${vmimage_base_path} ]] || mkdir -p ${vmimage_base_path}
+  mkdir -p ${vmimage_base_path}
 
   echo "===> ${vmimage_path}"
-  [[ -f "${vmimage_path}" ]] || {
-    curl -fSkL --retry 3 -o ${vmimage_path} -R ${vmimage_uri}
-  }
+  if ! [[ -f "${vmimage_path}" ]]; then
+    curl -fSkLR --retry 3 --retry-delay 3 ${vmimage_uri} -o ${vmimage_path}.tmp
+    mv ${vmimage_path}.tmp ${vmimage_path}
+  fi
 }
 
 function validate_arch() {
