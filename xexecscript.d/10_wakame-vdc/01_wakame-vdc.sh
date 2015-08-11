@@ -9,7 +9,7 @@ set -e
 echo "doing execscript.sh: $1"
 
 chroot $1 $SHELL -ex <<'EOS'
-  rpm -Uvh http://dlc.wakame.axsh.jp.s3-website-us-east-1.amazonaws.com/epel-release
+  rpm -Uvh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-8.noarch.rpm
   # workaround 2014/10/17
   #
   # in order escape below error
