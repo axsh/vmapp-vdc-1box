@@ -17,7 +17,7 @@ function deploy_vmimage() {
   [[ -n "${hypervisor}"   ]] || { echo "[ERROR] invalid argument: 'hypervisor'" >&2; return 1; }
   [[ -n "${multi_suffix}" ]] || { echo "[ERROR] invalid argument: 'multi_suffix'" >&2; return 1; }
 
-  local vmimage_base_uri=http://dlc.wakame.axsh.jp.s3.amazonaws.com/demo/1box/vmimage
+  local vmimage_base_uri=http://dlc2.wakame.axsh.jp/demo/1box/vmimage
   local vmimage_base_path=${abs_dirname}/guestroot.${hypervisor}.${arch}/var/lib/wakame-vdc/images
 
   local vmimage_uri=${vmimage_base_uri}/${vmimage}.${arch}.${hypervisor}.${multi_suffix}
