@@ -10,7 +10,7 @@ echo "doing execscript.sh: $1"
 
 chroot $1 $SHELL -ex <<'EOS'
   rpm -qi rabbitmq-server || {
-    yum install -y http://www.rabbitmq.com.axsh.jp/releases/rabbitmq-server/v2.7.1/rabbitmq-server-2.7.1-1.noarch.rpm
+    yum install -y http://www.rabbitmq.com/releases/rabbitmq-server/v2.7.1/rabbitmq-server-2.7.1-1.noarch.rpm
   }
 
   pkg_names="
