@@ -32,7 +32,7 @@ chroot $1 $SHELL -ex <<'EOS'
     6.[0-5])
       # wakame-vdc-ruby depends on libyaml.
       # TODO: handle arch type.
-      yum install -y http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/os/x86_64/Packages/libyaml-0.1.3-1.4.el6.x86_64.rpm
+      yum install -y http://vault.centos.org/6.6/os/x86_64/Packages/libyaml-0.1.3-1.4.el6.x86_64.rpm
       ;;
   esac
 EOS
