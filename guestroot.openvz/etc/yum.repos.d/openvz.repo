@@ -8,15 +8,23 @@ gpgkey=http://download.openvz.org/RPM-GPG-Key-OpenVZ
 [openvz-utils-libcgroup]
 name=OpenVZ utilities libcgroup
 baseurl=http://download.openvz.org/utils/libcgroup/0.37-4/
+gpgcheck=1
+gpgkey=http://download.openvz.org/RPM-GPG-Key-OpenVZ
 
 [openvz-utils-ploop]
 name=OpenVZ utilities ploop
 baseurl=http://download.openvz.org/utils/ploop/1.4/
+gpgcheck=1
+gpgkey=http://download.openvz.org/RPM-GPG-Key-OpenVZ
 
 [openvz-utils-vzctl]
 name=OpenVZ utilities vzctl
 baseurl=http://download.openvz.org/utils/vzctl/3.3/
+gpgcheck=1
+gpgkey=http://download.openvz.org/RPM-GPG-Key-OpenVZ
 
 [openvz-utils-vzquota]
 name=OpenVZ utilities vzquota
 baseurl=http://download.openvz.org/utils/vzquota/3.1/
+gpgcheck=1
+gpgkey=http://download.openvz.org/RPM-GPG-Key-OpenVZ
