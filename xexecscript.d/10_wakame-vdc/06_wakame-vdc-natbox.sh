@@ -9,8 +9,8 @@ set -e
 echo "doing execscript.sh: $1"
 
 chroot $1 $SHELL -ex <<'EOS'
-  # Note: even if you use under centos-6.7, the below openvswitch package can run.
-  yum install -y http://dlc.openvnet.axsh.jp/packages/rhel/openvswitch/6.7/openvswitch-2.4.0-1.x86_64.rpm
+  # Note: even if you use centos-6.4 later, the below openvswitch package can run.
+  yum install -y http://dlc.openvnet.axsh.jp/packages/rhel/openvswitch/6.4/openvswitch-2.4.0-1.x86_64.rpm
 EOS
 
 chroot $1 $SHELL -ex <<'EOS'
