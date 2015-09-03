@@ -30,8 +30,3 @@ chroot $1 $SHELL -ex <<'EOS'
   /opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh add
   /opt/axsh/wakame-vdc/rpmbuild/helpers/edit-grub4vz.sh enable
 EOS
-
-# don't use "'EOS'" here
-chroot $1 $SHELL -ex <<EOS
-  yum install -y http://dlc2.wakame.axsh.jp/packages/rhel/6/master/20120912124632gitff83ce0/${basearch}/kmod-openvswitch-vzkernel-1.6.1-1.el6.${distro_arch}.rpm
-EOS

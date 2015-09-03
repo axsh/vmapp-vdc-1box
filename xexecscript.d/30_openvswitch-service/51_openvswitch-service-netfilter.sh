@@ -14,13 +14,3 @@ esac
 chroot $1 $SHELL -ex <<EOS
   chkconfig --list openvswitch && { chkconfig openvswitch off; } || :
 EOS
-
-case "${VDC_HYPERVISOR}" in
-openvz) ;;
-*) exit 0 ;;
-esac
-
-chroot $1 $SHELL -ex <<EOS
-  # default
-  yum remove -y kmod-openvswitch-vzkernel
-EOS
